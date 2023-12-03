@@ -1,5 +1,4 @@
 <?php
-
     Trait Model {
         use Database;
         protected $limit = 10;

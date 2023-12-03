@@ -1,8 +1,9 @@
 <?php
+
     class User{
         use Model;
 
-        protected $table = 'utenti';
+        protected $table = 'palestre';
 
         protected $allowedColumns = [
         ];

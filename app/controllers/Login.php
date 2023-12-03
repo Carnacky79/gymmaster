@@ -3,9 +3,22 @@
 class Login
 {
     use Controller;
+    use Session;
 
     public function index()
     {
-        $this->view('admin');
+        $data =[
+          'email' => $_REQUEST['email'],
+          'password' => $_REQUEST['password'],
+        ];
+        $user = new User();
+        $loggedUser = $user->first($data);
+        if($loggedUser){
+            $this->saveUser($loggedUser);
+            $this->view('admin');
+        }else{
+            $this->view('home');
+        }
+
     }
 }

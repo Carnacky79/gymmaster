@@ -8,7 +8,7 @@
         define('DBPASS', 'password');
         define('DBDRIVER', '');
 
-        define('ROOT', 'http://localhost/gyn/public');
+        define('ROOT', 'http://localhost/gym/public');
     }else{
         /** Database configuration */
         define('DBNAME', 'test');

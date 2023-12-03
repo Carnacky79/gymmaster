@@ -8,4 +8,5 @@
     require 'Database.php';
     require 'Model.php';
     require 'Controller.php';
+    require 'Session.php';
     require 'App.php';
