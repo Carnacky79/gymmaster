@@ -7,16 +7,16 @@ class Login
 
     public function index()
     {
-        $data =[
-          'email' => $_REQUEST['email'],
-          'password' => $_REQUEST['password'],
+        $data = [
+            'email' => $_REQUEST['email'],
+            'password' => $_REQUEST['password'],
         ];
         $user = new User();
         $loggedUser = $user->first($data);
-        if($loggedUser){
+        if ($loggedUser) {
             $this->saveUser($loggedUser);
-            $this->view('admin');
-        }else{
+            $this->redirect('admin');
+        } else {
             $this->view('home');
         }
 

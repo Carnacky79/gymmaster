@@ -4,482 +4,7 @@
 
     <!-- ############ LAYOUT START-->
 
-    <!-- aside -->
-    <div id="aside" class="app-aside modal fade folded md nav-expand">
-        <div class="left navside indigo-900 dk" layout="column">
-            <div class="navbar navbar-md no-radius">
-                <!-- brand -->
-                <a class="navbar-brand">
-                    <div ui-include="'<?=ASSETS?>/images/logo.svg'"></div>
-                    <img src="<?=ASSETS?>/images/logo.png" alt="." class="hide">
-                    <span class="hidden-folded inline">Flatkit</span>
-                </a>
-                <!-- / brand -->
-            </div>
-            <div flex class="hide-scroll">
-                <nav class="scroll nav-active-primary">
-
-                    <ul class="nav" ui-nav>
-                        <li class="nav-header hidden-folded">
-                            <small class="text-muted">Main</small>
-                        </li>
-
-                        <li>
-                            <a href="dashboard.html" >
-                  <span class="nav-icon">
-                    <i class="material-icons">&#xe3fc;
-                      <span ui-include="'<?=ASSETS?>/images/i_0.svg'"></span>
-                    </i>
-                  </span>
-                                <span class="nav-text">Dashboard</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a>
-                  <span class="nav-caret">
-                    <i class="fa fa-caret-down"></i>
-                  </span>
-                                <span class="nav-label">
-                    <b class="label rounded label-sm primary">5</b>
-                  </span>
-                                <span class="nav-icon">
-                    <i class="material-icons">&#xe5c3;
-                      <span ui-include="'<?=ASSETS?>/images/i_1.svg'"></span>
-                    </i>
-                  </span>
-                                <span class="nav-text">Apps</span>
-                            </a>
-                            <ul class="nav-sub">
-                                <li>
-                                    <a href="inbox.html" >
-                                        <span class="nav-text">Inbox</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="contact.html" >
-                                        <span class="nav-text">Contacts</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="calendar.html" >
-                                        <span class="nav-text">Calendar</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a>
-                  <span class="nav-caret">
-                    <i class="fa fa-caret-down"></i>
-                  </span>
-                                <span class="nav-icon">
-                    <i class="material-icons">&#xe8f0;
-                      <span ui-include="'<?=ASSETS?>/images/i_2.svg'"></span>
-                    </i>
-                  </span>
-                                <span class="nav-text">Layouts</span>
-                            </a>
-                            <ul class="nav-sub">
-                                <li>
-                                    <a href="headers.html" >
-                                        <span class="nav-text">Header</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="asides.html" >
-                                        <span class="nav-text">Aside</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="footers.html" >
-                                        <span class="nav-text">Footer</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="widget.html" >
-                  <span class="nav-icon">
-                    <i class="material-icons">&#xe8d2;
-                      <span ui-include="'<?=ASSETS?>/images/i_3.svg'"></span>
-                    </i>
-                  </span>
-                                <span class="nav-text">Widgets</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-header hidden-folded">
-                            <small class="text-muted">Components</small>
-                        </li>
-
-                        <li>
-                            <a>
-                  <span class="nav-caret">
-                    <i class="fa fa-caret-down"></i>
-                  </span>
-                                <span class="nav-label">
-                    <b class="label label-sm accent">8</b>
-                  </span>
-                                <span class="nav-icon">
-                    <i class="material-icons">&#xe429;
-                      <span ui-include="'<?=ASSETS?>/images/i_4.svg'"></span>
-                    </i>
-                  </span>
-                                <span class="nav-text">UI kit</span>
-                            </a>
-                            <ul class="nav-sub nav-mega nav-mega-3">
-                                <li>
-                                    <a href="arrow.html" >
-                                        <span class="nav-text">Arrow</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="box.html" >
-                                        <span class="nav-text">Box</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="button.html" >
-                                        <span class="nav-text">Button</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="color.html" >
-                                        <span class="nav-text">Color</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="dropdown.html" >
-                                        <span class="nav-text">Dropdown</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="grid.html" >
-                                        <span class="nav-text">Grid</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="icon.html" >
-                                        <span class="nav-text">Icon</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="label.html" >
-                                        <span class="nav-text">Label</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="list.html" >
-                                        <span class="nav-text">List Group</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="modal.html" >
-                                        <span class="nav-text">Modal</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="nav.html" >
-                                        <span class="nav-text">Nav</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="progress.html" >
-                                        <span class="nav-text">Progress</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="social.html" >
-                                        <span class="nav-text">Social</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="sortable.html" >
-                                        <span class="nav-text">Sortable</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="streamline.html" >
-                                        <span class="nav-text">Streamline</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="timeline.html" >
-                                        <span class="nav-text">Timeline</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="map.vector.html" >
-                                        <span class="nav-text">Vector Map</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a>
-                  <span class="nav-caret">
-                    <i class="fa fa-caret-down"></i>
-                  </span>
-                                <span class="nav-label"><b class="label no-bg">9</b></span>
-                                <span class="nav-icon">
-                    <i class="material-icons">&#xe3e8;
-                      <span ui-include="'<?=ASSETS?>/images/i_5.svg'"></span>
-                    </i>
-                  </span>
-                                <span class="nav-text">Pages</span>
-                            </a>
-                            <ul class="nav-sub nav-mega">
-                                <li>
-                                    <a href="profile.html" >
-                                        <span class="nav-text">Profile</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="setting.html" >
-                                        <span class="nav-text">Setting</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="search.html" >
-                                        <span class="nav-text">Search</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="faq.html" >
-                                        <span class="nav-text">FAQ</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="gallery.html" >
-                                        <span class="nav-text">Gallery</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="invoice.html" >
-                                        <span class="nav-text">Invoice</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="price.html" >
-                                        <span class="nav-text">Price</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="blank.html" >
-                                        <span class="nav-text">Blank</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="signin.html" >
-                                        <span class="nav-text">Sign In</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="signup.html" >
-                                        <span class="nav-text">Sign Up</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="forgot-password.html" >
-                                        <span class="nav-text">Forgot Password</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="lockme.html" >
-                                        <span class="nav-text">Lockme Screen</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="404.html" >
-                                        <span class="nav-text">Error 404</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="505.html" >
-                                        <span class="nav-text">Error 505</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a>
-                  <span class="nav-caret">
-                    <i class="fa fa-caret-down"></i>
-                  </span>
-                                <span class="nav-icon">
-                    <i class="material-icons">&#xe39e;
-                      <span ui-include="'<?=ASSETS?>/images/i_6.svg'"></span>
-                    </i>
-                  </span>
-                                <span class="nav-text">Form</span>
-                            </a>
-                            <ul class="nav-sub">
-                                <li>
-                                    <a href="form.layout.html" >
-                                        <span class="nav-text">Form Layout</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="form.element.html" >
-                                        <span class="nav-text">Form Element</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="form.validation.html" >
-                                        <span class="nav-text">Form Validation</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="form.select.html" >
-                                        <span class="nav-text">Select</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="form.editor.html" >
-                                        <span class="nav-text">Editor</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="form.picker.html">
-                                        <span class="nav-text">Picker</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="form.wizard.html">
-                                        <span class="nav-text">Wizard</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="form.dropzone.html" class="no-ajax" >
-                                        <span class="nav-text">File Upload</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a>
-                  <span class="nav-caret">
-                    <i class="fa fa-caret-down"></i>
-                  </span>
-                                <span class="nav-icon">
-                    <i class="material-icons">&#xe896;
-                      <span ui-include="'<?=ASSETS?>/images/i_7.svg'"></span>
-                    </i>
-                  </span>
-                                <span class="nav-text">Tables</span>
-                            </a>
-                            <ul class="nav-sub">
-                                <li>
-                                    <a href="static.html" >
-                                        <span class="nav-text">Static table</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="datatable.html" >
-                                        <span class="nav-text">Datatable</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="footable.html" >
-                                        <span class="nav-text">Footable</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a>
-                  <span class="nav-caret">
-                    <i class="fa fa-caret-down"></i>
-                  </span>
-                                <span class="nav-label hidden-folded">
-                    <b class="label label-sm info">N</b>
-                  </span>
-                                <span class="nav-icon">
-                    <i class="material-icons">&#xe1b8;
-                      <span ui-include="'<?=ASSETS?>/images/i_8.svg'"></span>
-                    </i>
-                  </span>
-                                <span class="nav-text">Charts</span>
-                            </a>
-                            <ul class="nav-sub">
-                                <li>
-                                    <a href="chart.html" >
-                                        <span class="nav-text">Chart</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a>
-                      <span class="nav-caret">
-                        <i class="fa fa-caret-down"></i>
-                      </span>
-                                        <span class="nav-text">Echarts</span>
-                                    </a>
-                                    <ul class="nav-sub">
-                                        <li>
-                                            <a href="echarts-line.html" >
-                                                <span class="nav-text">line</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="echarts-bar.html" >
-                                                <span class="nav-text">Bar</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="echarts-pie.html" >
-                                                <span class="nav-text">Pie</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="echarts-scatter.html" >
-                                                <span class="nav-text">Scatter</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="echarts-radar-chord.html" >
-                                                <span class="nav-text">Radar &amp; Chord</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="echarts-gauge-funnel.html" >
-                                                <span class="nav-text">Gauges &amp; Funnel</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="echarts-map.html" >
-                                                <span class="nav-text">Map</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-header hidden-folded">
-                            <small class="text-muted">Help</small>
-                        </li>
-
-                        <li class="hidden-folded" >
-                            <a href="docs.html" >
-                                <span class="nav-text">Documents</span>
-                            </a>
-                        </li>
-
-                    </ul>
-                </nav>
-            </div>
-            <div flex-no-shrink>
-                <div ui-include="'<?=ASSETS?>/views/blocks/aside.bottom.0.html'"></div>
-            </div>
-        </div>
-    </div>
-    <!-- / aside -->
+    <?php require 'parts/aside.php' ?>
 
     <!-- content -->
     <div id="content" class="app-content box-shadow-z0" role="main">
@@ -501,34 +26,28 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link" href data-toggle="dropdown">
                                 <i class="fa fa-fw fa-plus text-muted"></i>
-                                <span>New</span>
+                                <span>Aggiungi</span>
                             </a>
-                            <div ui-include="'<?=ASSETS?>/views/blocks/dropdown.new.html'"></div>
+                            <?php require 'parts/dropdown.new.php' ?>
+                            <!--<div ui-include="'<?= ASSETS ?>/views/blocks/dropdown.new.html'"></div>-->
                         </li>
                     </ul>
 
-                    <div ui-include="'<?=ASSETS?>/views/blocks/navbar.form.html'"></div>
-                    <!-- / -->
+
+                    <!-- <div ui-include="'<?= ASSETS ?>/views/blocks/navbar.form.html'"></div> -->
                 </div>
                 <!-- / navbar collapse -->
 
                 <!-- navbar right -->
                 <ul class="nav navbar-nav ml-auto flex-row">
-                    <li class="nav-item dropdown pos-stc-xs">
-                        <a class="nav-link mr-2" href data-toggle="dropdown">
-                            <i class="material-icons">&#xe7f5;</i>
-                            <span class="label label-sm up warn">3</span>
-                        </a>
-                        <div ui-include="'<?=ASSETS?>/views/blocks/dropdown.notification.html'"></div>
-                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link p-0 clear" href="#" data-toggle="dropdown">
                   <span class="avatar w-32">
-                    <img src="<?=ASSETS?>/images/a0.jpg" alt="...">
+                    <img src="<?= ASSETS ?>/images/a0.jpg" alt="...">
                     <i class="on b-white bottom"></i>
                   </span>
                         </a>
-                        <div ui-include="'<?=ASSETS?>/views/blocks/dropdown.user.html'"></div>
+                        <div ui-include="'<?= ASSETS ?>/views/blocks/dropdown.user.html'"></div>
                     </li>
                     <li class="nav-item hidden-md-up">
                         <a class="nav-link pl-2" data-toggle="collapse" data-target="#collapse">
@@ -542,12 +61,9 @@
         <div class="app-footer">
             <div class="p-2 text-xs">
                 <div class="pull-right text-muted py-1">
-                    &copy; Copyright <strong>Flatkit</strong> <span class="hidden-xs-down">- Built with Love v1.1.3</span>
+                    &copy; Copyright <strong>EggWeb</strong> <span
+                            class="hidden-xs-down">- Built with Love v1.1.3</span>
                     <a ui-scroll-to="content"><i class="fa fa-long-arrow-up p-x-sm"></i></a>
-                </div>
-                <div class="nav">
-                    <a class="nav-link" href="../">About</a>
-                    <a class="nav-link" href="http://themeforest.net/user/flatfull/portfolio?ref=flatfull">Get it</a>
                 </div>
             </div>
         </div>
@@ -556,8 +72,7 @@
             <!-- ############ PAGE START-->
             <div class="padding">
                 <div class="margin">
-                    <h5 class="mb-0 _300">Hi Jone, Welcome back</h5>
-                    <small class="text-muted">Awesome uikit for your next project</small>
+                    <h5 class="mb-0 _300">Ciao <?= $_SESSION['user']->nome ?></h5>
                 </div>
                 <div class="row">
                     <div class="col-sm-12 col-md-5 col-lg-4">
@@ -650,7 +165,7 @@
 			                tooltip: true,
 			                tooltipOpts: { content: '%x.0 is %y.4',  defaultTheme: false, shifts: { x: 0, y: -40 } }
 			              }
-			            " style="height:162px" >
+			            " style="height:162px">
                                     </div>
                                 </div>
                             </div>
@@ -659,7 +174,8 @@
                                     <h3>Reports</h3>
                                 </div>
                                 <div class="box-body">
-                                    <p class="text-muted">Dales nisi nec adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis</p>
+                                    <p class="text-muted">Dales nisi nec adipiscing elit. Morbi id neque quam. Aliquam
+                                        sollicitudin venenatis</p>
                                     <a href class="btn btn-sm btn-outline rounded b-success">Read More</a>
                                 </div>
                             </div>
@@ -698,7 +214,9 @@
                                 <div class="row-col">
                                     <div class="row-cell p-a">
                                         <div class="inline m-b">
-                                            <div ui-jp="easyPieChart" class="easyPieChart" ui-refresh="app.setting.color" data-redraw='true' data-percent="55" ui-options="{
+                                            <div ui-jp="easyPieChart" class="easyPieChart"
+                                                 ui-refresh="app.setting.color" data-redraw='true' data-percent="55"
+                                                 ui-options="{
 	                      lineWidth: 8,
 	                      trackColor: 'rgba(0,0,0,0.05)',
 	                      barColor: '#0cc2aa',
@@ -723,7 +241,9 @@
                                     </div>
                                     <div class="row-cell p-a dker">
                                         <div class="inline m-b">
-                                            <div ui-jp="easyPieChart" class="easyPieChart" ui-refresh="app.setting.color" data-redraw='true' data-percent="45" ui-options="{
+                                            <div ui-jp="easyPieChart" class="easyPieChart"
+                                                 ui-refresh="app.setting.color" data-redraw='true' data-percent="45"
+                                                 ui-options="{
 	                      lineWidth: 8,
 	                      trackColor: 'rgba(0,0,0,0.05)',
 	                      barColor: '#fcc100',
@@ -798,7 +318,7 @@
 	                tooltip: true,
 	                tooltipOpts: { content: '%x.0 is %y.4',  defaultTheme: false, shifts: { x: 0, y: -40 } }
 	              }
-	            " style="height:200px" >
+	            " style="height:200px">
                                 </div>
                             </div>
                         </div>
@@ -846,7 +366,7 @@
 	                tooltip: true,
 	                tooltipOpts: { content: '%x.0 is %y.4',  defaultTheme: false, shifts: { x: 0, y: -40 } }
 	              }
-	            " style="height:200px" >
+	            " style="height:200px">
                                 </div>
                             </div>
                         </div>
@@ -953,7 +473,9 @@
                                         </div>
                                         <div class="sl-content">
                                             <div class="sl-date text-muted">8:30</div>
-                                            <div>Call to customer <a href class="text-info">Jacob</a> and discuss the detail about the AP project.</div>
+                                            <div>Call to customer <a href class="text-info">Jacob</a> and discuss the
+                                                detail about the AP project.
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="sl-item b-info">
@@ -965,7 +487,10 @@
                                     <div class="sl-item b-warning">
                                         <div class="sl-content">
                                             <div class="sl-date text-muted">Sun, 11 Feb</div>
-                                            <div><a href class="text-info">Jessi</a> assign you a task <a href class="text-info">Mockup Design</a>.</div>
+                                            <div><a href class="text-info">Jessi</a> assign you a task <a href
+                                                                                                          class="text-info">Mockup
+                                                    Design</a>.
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -987,7 +512,7 @@
                                 <div class="streamline b-l m-b m-l">
                                     <div class="sl-item">
                                         <div class="sl-left">
-                                            <img src="<?=ASSETS?>/images/a2.jpg" class="img-circle">
+                                            <img src="<?= ASSETS ?>/images/a2.jpg" class="img-circle">
                                         </div>
                                         <div class="sl-content">
                                             <a href class="text-info">Louis Elliott</a><span class="m-l-sm sl-date">5 min ago</span>
@@ -996,7 +521,7 @@
                                     </div>
                                     <div class="sl-item">
                                         <div class="sl-left">
-                                            <img src="<?=ASSETS?>/images/a5.jpg" class="img-circle">
+                                            <img src="<?= ASSETS ?>/images/a5.jpg" class="img-circle">
                                         </div>
                                         <div class="sl-content">
                                             <a href class="text-info">Terry Moore</a><span class="m-l-sm sl-date">10 min ago</span>
@@ -1005,7 +530,7 @@
                                     </div>
                                     <div class="sl-item">
                                         <div class="sl-left">
-                                            <img src="<?=ASSETS?>/images/a8.jpg" class="img-circle">
+                                            <img src="<?= ASSETS ?>/images/a8.jpg" class="img-circle">
                                         </div>
                                         <div class="sl-content">
                                             <a href class="text-info">Walter Paler</a><span class="m-l-sm sl-date">1 hour ago</span>
@@ -1026,28 +551,32 @@
                             </div>
                             <ul class="list no-border">
                                 <li class="list-item">
-                                    <a href="" class="pull-left w-40 m-r"><img src="<?=ASSETS?>/images/a1.jpg" class="img-responsive img-circle"></a>
+                                    <a href="" class="pull-left w-40 m-r"><img src="<?= ASSETS ?>/images/a1.jpg"
+                                                                               class="img-responsive img-circle"></a>
                                     <div class="clear">
                                         <a href="" class="_500 block">Jonathan Doe</a>
                                         <span class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                                     </div>
                                 </li>
                                 <li class="list-item">
-                                    <a href="" class="pull-left w-40 m-r"><img src="<?=ASSETS?>/images/a2.jpg" class="img-responsive img-circle"></a>
+                                    <a href="" class="pull-left w-40 m-r"><img src="<?= ASSETS ?>/images/a2.jpg"
+                                                                               class="img-responsive img-circle"></a>
                                     <div class="clear">
                                         <a href="" class="_500 block">Jack Michale</a>
                                         <span class="text-muted">Sectetur adipiscing elit</span>
                                     </div>
                                 </li>
                                 <li class="list-item">
-                                    <a href="" class="pull-left w-40 m-r"><img src="<?=ASSETS?>/images/a3.jpg" class="img-responsive img-circle"></a>
+                                    <a href="" class="pull-left w-40 m-r"><img src="<?= ASSETS ?>/images/a3.jpg"
+                                                                               class="img-responsive img-circle"></a>
                                     <div class="clear">
                                         <a href="" class="_500 block">Jessi</a>
                                         <span class="text-muted">Sectetur adipiscing elit</span>
                                     </div>
                                 </li>
                                 <li class="list-item">
-                                    <a href="" class="pull-left w-40 m-r"><img src="<?=ASSETS?>/images/a4.jpg" class="img-responsive img-circle"></a>
+                                    <a href="" class="pull-left w-40 m-r"><img src="<?= ASSETS ?>/images/a4.jpg"
+                                                                               class="img-responsive img-circle"></a>
                                     <div class="clear">
                                         <a href="" class="_500 block">Sodake</a>
                                         <span class="text-muted">Vestibulum ullamcorper sodales nisi nec condimentum</span>
@@ -1064,19 +593,23 @@
                             <ul class="list">
                                 <li class="list-item">
                                     <div class="list-body">
-                                        <p>Wellcome <a href class="text-info">@Drew Wllon</a> and play this web application template, have fun1 </p>
+                                        <p>Wellcome <a href class="text-info">@Drew Wllon</a> and play this web
+                                            application template, have fun1 </p>
                                         <small class="block text-muted"><i class="fa fa-fw fa-clock-o"></i> 2 minuts ago</small>
                                     </div>
                                 </li>
                                 <li class="list-item">
                                     <div class="list-body">
-                                        <p>Morbi nec <a href class="text-info">@Jonathan George</a> nunc condimentum ipsum dolor sit amet, consectetur</p>
-                                        <small class="block text-muted"><i class="fa fa-fw fa-clock-o"></i> 1 hour ago</small>
+                                        <p>Morbi nec <a href class="text-info">@Jonathan George</a> nunc condimentum
+                                            ipsum dolor sit amet, consectetur</p>
+                                        <small class="block text-muted"><i class="fa fa-fw fa-clock-o"></i> 1 hour
+                                            ago</small>
                                     </div>
                                 </li>
                                 <li class="list-item">
                                     <div class="list-body">
-                                        <p><a href class="text-info">@Josh Long</a> Vestibulum ullamcorper sodales nisi nec adipiscing elit. Morbi id neque quam</p>
+                                        <p><a href class="text-info">@Josh Long</a> Vestibulum ullamcorper sodales nisi
+                                            nec adipiscing elit. Morbi id neque quam</p>
                                         <small class="block text-muted"><i class="fa fa-fw fa-clock-o"></i> 2 hours ago</small>
                                     </div>
                                 </li>
@@ -1093,7 +626,7 @@
                                 <li class="list-item">
                                     <a herf class="pull-left m-r">
 	                	<span class="w-40">
-	                  		<img src="<?=ASSETS?>/images/b1.jpg" class="w-full" alt="...">
+	                  		<img src="<?= ASSETS ?>/images/b1.jpg" class="w-full" alt="...">
 	                 	</span>
                                     </a>
                                     <div class="clear">
@@ -1104,7 +637,7 @@
                                 <li class="list-item">
                                     <a herf class="pull-left m-r">
 		                <span class="w-40">
-	                  		<img src="<?=ASSETS?>/images/b2.jpg" class="w-full" alt="...">
+	                  		<img src="<?= ASSETS ?>/images/b2.jpg" class="w-full" alt="...">
 	                 	</span>
                                     </a>
                                     <div class="clear">
@@ -1115,7 +648,7 @@
                                 <li class="list-item">
                                     <a herf class="pull-left m-r">
 	                    <span class="w-40">
-	                  		<img src="<?=ASSETS?>/images/b3.jpg" class="w-full" alt="...">
+	                  		<img src="<?= ASSETS ?>/images/b3.jpg" class="w-full" alt="...">
 	                 	</span>
                                     </a>
                                     <div class="clear">
@@ -1126,7 +659,7 @@
                                 <li class="list-item">
                                     <a herf class="pull-left m-r">
 	                    <span class="w-40">
-	                  		<img src="<?=ASSETS?>/images/b4.jpg" class="w-full" alt="...">
+	                  		<img src="<?= ASSETS ?>/images/b4.jpg" class="w-full" alt="...">
 	                 	</span>
                                     </a>
                                     <div class="clear">
@@ -1137,7 +670,7 @@
                                 <li class="list-item">
                                     <a herf class="pull-left m-r">
 	                    <span class="w-40">
-	                  		<img src="<?=ASSETS?>/images/b5.jpg" class="w-full" alt="...">
+	                  		<img src="<?= ASSETS ?>/images/b5.jpg" class="w-full" alt="...">
 	                 	</span>
                                     </a>
                                     <div class="clear">
@@ -1164,13 +697,14 @@
                 <i class="fa fa-gear"></i>
             </a>
             <div class="box-header">
-                <a href="https://themeforest.net/item/flatkit-app-ui-kit/13231484?ref=flatfull" class="btn btn-xs rounded danger pull-right">BUY</a>
+                <a href="https://themeforest.net/item/flatkit-app-ui-kit/13231484?ref=flatfull"
+                   class="btn btn-xs rounded danger pull-right">BUY</a>
                 <h2>Theme Switcher</h2>
             </div>
             <div class="box-divider"></div>
             <div class="box-body">
                 <p class="hidden-md-down">
-                    <label class="md-check m-y-xs"  data-target="folded">
+                    <label class="md-check m-y-xs" data-target="folded">
                         <input type="checkbox">
                         <i class="green"></i>
                         <span class="hidden-folded">Folded Aside</span>
@@ -1187,35 +721,43 @@
                 </p>
                 <p>Colors:</p>
                 <p data-target="themeID">
-                    <label class="radio radio-inline m-0 ui-check ui-check-color ui-check-md" data-value="{primary:'primary', accent:'accent', warn:'warn'}">
+                    <label class="radio radio-inline m-0 ui-check ui-check-color ui-check-md"
+                           data-value="{primary:'primary', accent:'accent', warn:'warn'}">
                         <input type="radio" name="color" value="1">
                         <i class="primary"></i>
                     </label>
-                    <label class="radio radio-inline m-0 ui-check ui-check-color ui-check-md" data-value="{primary:'accent', accent:'cyan', warn:'warn'}">
+                    <label class="radio radio-inline m-0 ui-check ui-check-color ui-check-md"
+                           data-value="{primary:'accent', accent:'cyan', warn:'warn'}">
                         <input type="radio" name="color" value="2">
                         <i class="accent"></i>
                     </label>
-                    <label class="radio radio-inline m-0 ui-check ui-check-color ui-check-md" data-value="{primary:'warn', accent:'light-blue', warn:'warning'}">
+                    <label class="radio radio-inline m-0 ui-check ui-check-color ui-check-md"
+                           data-value="{primary:'warn', accent:'light-blue', warn:'warning'}">
                         <input type="radio" name="color" value="3">
                         <i class="warn"></i>
                     </label>
-                    <label class="radio radio-inline m-0 ui-check ui-check-color ui-check-md" data-value="{primary:'success', accent:'teal', warn:'lime'}">
+                    <label class="radio radio-inline m-0 ui-check ui-check-color ui-check-md"
+                           data-value="{primary:'success', accent:'teal', warn:'lime'}">
                         <input type="radio" name="color" value="4">
                         <i class="success"></i>
                     </label>
-                    <label class="radio radio-inline m-0 ui-check ui-check-color ui-check-md" data-value="{primary:'info', accent:'light-blue', warn:'success'}">
+                    <label class="radio radio-inline m-0 ui-check ui-check-color ui-check-md"
+                           data-value="{primary:'info', accent:'light-blue', warn:'success'}">
                         <input type="radio" name="color" value="5">
                         <i class="info"></i>
                     </label>
-                    <label class="radio radio-inline m-0 ui-check ui-check-color ui-check-md" data-value="{primary:'blue', accent:'indigo', warn:'primary'}">
+                    <label class="radio radio-inline m-0 ui-check ui-check-color ui-check-md"
+                           data-value="{primary:'blue', accent:'indigo', warn:'primary'}">
                         <input type="radio" name="color" value="6">
                         <i class="blue"></i>
                     </label>
-                    <label class="radio radio-inline m-0 ui-check ui-check-color ui-check-md" data-value="{primary:'warning', accent:'grey-100', warn:'success'}">
+                    <label class="radio radio-inline m-0 ui-check ui-check-color ui-check-md"
+                           data-value="{primary:'warning', accent:'grey-100', warn:'success'}">
                         <input type="radio" name="color" value="7">
                         <i class="warning"></i>
                     </label>
-                    <label class="radio radio-inline m-0 ui-check ui-check-color ui-check-md" data-value="{primary:'danger', accent:'grey-100', warn:'grey-300'}">
+                    <label class="radio radio-inline m-0 ui-check ui-check-color ui-check-md"
+                           data-value="{primary:'danger', accent:'grey-100', warn:'grey-300'}">
                         <input type="radio" name="color" value="8">
                         <i class="danger"></i>
                     </label>
