@@ -80,22 +80,24 @@
                             <div class="col-sm-6">
                                 <div class="box p-a">
                                     <div class="pull-left m-r">
-                                        <i class="fa fa-heart text-2x text-danger m-y-sm"></i>
+                                        <i class="fa fa-users text-2x text-danger m-y-sm"></i>
                                     </div>
                                     <div class="clear">
-                                        <div class="text-muted">Likes</div>
-                                        <h4 class="m-0 text-md _600"><a href>7530</a></h4>
+                                        <div class="text-muted">Utenti</div>
+                                        <h4 class="m-0 text-md _600"><a
+                                                    href=""><?php echo count($data['iscritti']); ?></a>
+                                        </h4>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="box p-a">
                                     <div class="pull-left m-r">
-                                        <i class="fa fa-comments text-2x text-info m-y-sm"></i>
+                                        <i class="fa fa-arrows text-2x text-info m-y-sm"></i>
                                     </div>
                                     <div class="clear">
-                                        <div class="text-muted">Comments</div>
-                                        <h4 class="m-0 text-md _600"><a href>2980</a></h4>
+                                        <div class="text-muted">Schede</div>
+                                        <h4 class="m-0 text-md _600"><a href></a></h4>
                                     </div>
                                 </div>
                             </div>

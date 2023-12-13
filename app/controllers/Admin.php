@@ -6,14 +6,19 @@ class Admin
 
     public function index()
     {
-        $this->view('admin');
+        $iscritto = new Iscritto();
+        $data = [
+            'id_palestra' => $_SESSION['user']->id,
+        ];
+        $iscritti = $iscritto->where($data);
+        $this->view('admin', ['iscritti' => $iscritti]);
     }
 
     //DISPLAY ALL USERS
     public function users()
     {
-        $user = new User();
-        $users = $user->findAll();
-        $this->view('users', ['users' => $users]);
+        $iscritto = new Iscritto();
+        $iscritti = $iscritto->findAll();
+        $this->view('users', ['iscritti' => $iscritti]);
     }
 }
