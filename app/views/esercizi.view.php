@@ -83,11 +83,10 @@
                                             <i class="material-icons md-18">&#xe5d4;</i>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-scale pull-right">
-                                            <a class="dropdown-item" href>This week</a>
-                                            <a class="dropdown-item" href>This month</a>
-                                            <a class="dropdown-item" href>This week</a>
+                                            <a class="dropdown-item" href>Assegna esercizio</a>
+
                                             <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item">Today</a>
+
                                         </div>
                                     </li>
                                 </ul>

@@ -20,7 +20,7 @@ class Admin
     public function users()
     {
         $iscritto = new Iscritto();
-        $iscritti = $iscritto->findAll();
+        $iscritti = $iscritto->iscritti_palestra();
         $this->view('users', ['iscritti' => $iscritti]);
     }
 

@@ -1,10 +1,13 @@
 <?php
 
-    class User{
-        use Model;
+class User
+{
+    use Model;
 
-        protected $table = 'palestre';
+    protected $table = 'palestre';
 
-        protected $allowedColumns = [
-        ];
-    }
+    protected $allowedColumns = [
+    ];
+
+
+}
