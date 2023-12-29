@@ -96,8 +96,8 @@
                                         <i class="fa fa-arrows text-2x text-info m-y-sm"></i>
                                     </div>
                                     <div class="clear">
-                                        <div class="text-muted">Schede</div>
-                                        <h4 class="m-0 text-md _600"><a href></a></h4>
+                                        <div class="text-muted">Esercizi</div>
+                                        <h4 class="m-0 text-md _600"><a href><?php echo $data['esercizi']; ?></a></h4>
                                     </div>
                                 </div>
                             </div>

@@ -7,11 +7,13 @@ class Admin
     public function index()
     {
         $iscritto = new Iscritto();
+        $esercizi = new Esercizio();
         $data = [
             'id_palestra' => $_SESSION['user']->id,
         ];
         $iscritti = $iscritto->where($data);
-        $this->view('admin', ['iscritti' => $iscritti]);
+        $numeroEsercizi = $esercizi->count();
+        $this->view('admin', ['iscritti' => $iscritti, 'esercizi' => $numeroEsercizi]);
     }
 
     //DISPLAY ALL USERS
@@ -20,5 +22,12 @@ class Admin
         $iscritto = new Iscritto();
         $iscritti = $iscritto->findAll();
         $this->view('users', ['iscritti' => $iscritti]);
+    }
+
+    public function esercizi()
+    {
+        $esercizio = new Esercizio();
+        $esercizi = $esercizio->esercizi_categorie();
+        $this->view('esercizi', ['esercizi' => $esercizi]);
     }
 }
