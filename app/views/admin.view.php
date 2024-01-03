@@ -39,22 +39,7 @@
                 <!-- / navbar collapse -->
 
                 <!-- navbar right -->
-                <ul class="nav navbar-nav ml-auto flex-row">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link p-0 clear" href="#" data-toggle="dropdown">
-                  <span class="avatar w-32">
-                    <img src="<?= ASSETS ?>/images/a0.jpg" alt="...">
-                    <i class="on b-white bottom"></i>
-                  </span>
-                        </a>
-                        <div ui-include="'<?= ASSETS ?>/views/blocks/dropdown.user.html'"></div>
-                    </li>
-                    <li class="nav-item hidden-md-up">
-                        <a class="nav-link pl-2" data-toggle="collapse" data-target="#collapse">
-                            <i class="material-icons">&#xe5d4;</i>
-                        </a>
-                    </li>
-                </ul>
+                <?php require 'parts/navbar.right.php' ?>
                 <!-- / navbar right -->
             </div>
         </div>

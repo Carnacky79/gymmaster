@@ -6,14 +6,14 @@
     <div class="center-block w-xxl w-auto-xs p-y-md">
         <div class="navbar">
             <div class="pull-center">
-                <div ui-include="'<?=ASSETS?>/views/blocks/navbar.brand.html'"></div>
+                <div ui-include="'<?= ASSETS ?>/views/blocks/navbar.brand.html'"></div>
             </div>
         </div>
         <div class="p-a-md box-color r box-shadow-z1 text-color m-a">
             <div class="m-b text-sm">
                 Log In GymMaster
             </div>
-            <form name="form" action="login" method="post">
+            <form name="form" action="<?= ROOT ?>/login" method="post">
                 <div class="md-form-group float-label">
                     <input type="email" class="md-input" name="email" required>
                     <label>Email</label>

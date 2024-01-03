@@ -21,4 +21,15 @@ class Login
         }
 
     }
+
+    public function logout()
+    {
+        $this->destroySession();
+        $this->redirect('home');
+    }
+
+    private function destroySession()
+    {
+        session_destroy();
+    }
 }
