@@ -4,9 +4,9 @@
         <div class="navbar navbar-md no-radius">
             <!-- brand -->
             <a class="navbar-brand">
-                <div ui-include="'<?= ASSETS ?>/images/logo.svg'"></div>
-                <img src="<?= ASSETS ?>/images/logo.png" alt="." class="hide">
-                <span class="hidden-folded inline">Flatkit</span>
+                <!--<div ui-include="'<?= ASSETS ?>/images/logo_gym.svg'"></div>-->
+                <img src="<?= ASSETS ?>/images/logo_gym.png" alt="logo" class="h-2x">
+                <span class="hidden-folded inline">Gym Master</span>
             </a>
             <!-- / brand -->
         </div>

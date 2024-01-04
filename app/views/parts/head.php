@@ -19,7 +19,7 @@
     <!-- style -->
     <link rel="stylesheet" href="<?= ASSETS ?>/animate.css/animate.min.css" type="text/css"/>
     <link rel="stylesheet" href="<?= ASSETS ?>/glyphicons/glyphicons.css" type="text/css"/>
-    <link rel="stylesheet" href="<?= ASSETS ?>/font-awesome/css/font-awesome.min.css" type="text/css"/>
+    <!--<link rel="stylesheet" href="<?= ASSETS ?>/font-awesome/css/font-awesome.min.css" type="text/css"/>-->
     <!--<link rel="stylesheet" href="<?= ASSETS ?>/material-design-icons/material-design-icons.css" type="text/css" />-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
@@ -34,4 +34,5 @@
             font-size: 16px;
         }
     </style>
+    <script src="https://kit.fontawesome.com/2dcf18d0c3.js" crossorigin="anonymous"></script>
 </head>
