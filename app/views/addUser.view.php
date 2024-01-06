@@ -50,19 +50,12 @@
                     <h5 class="mb-0 _300">Ciao <?= $_SESSION['user']->nome ?></h5>
                 </div>
                 <div class="row">
-                    <?php //count($data['iscritti']); ?>
-                    <?php
-                    $count = 1;
-                    foreach ($data['iscritti'] as $iscritto) {
-                        //$imgs = IMG . '/esercizi/' . $esercizio->cat_nome . '/' . $esercizio->nome . '/' . str_replace('_', '-', $esercizio->nome) . '.gif';
-                        $html = <<<HTML
-                        <div class="col">
+                    <div class="col">
                         <div class="box">
                             <div class="box-header">
-                                <h3>$iscritto->nome $iscritto->cognome</h3>
-                                <small>$iscritto->email</small>
+                                <h3>Inserisci nuovo Iscritto</h3>
                             </div>
-                            <div class="box-tool">
+                            <!--<div class="box-tool">
                                 <ul class="nav">
                                     <li class="nav-item inline dropdown">
                                         <a class="nav-link" data-toggle="dropdown">
@@ -76,30 +69,50 @@
                                         </div>
                                     </li>
                                 </ul>
-                            </div>
+                            </div>-->
                             <div class="box-body">
-                                <div class="row">
-                                    <div class="col-4">
-                                    <h4>Iscritto dal $iscritto->data_iscrizione</h4>
+                                <form action="" method="post">
+                                    <div class="row mt-3">
+
+                                        <div class="col-4">
+                                            <label for="nome">Nome: </label>
+                                            <input type="text" class="form-control" id="nome" name="nome"
+                                                   placeholder="Nome">
+                                        </div>
+                                        <div class="col-4">
+                                            <label for="cognome">Cognome: </label>
+                                            <input type="text" class="form-control" id="cognome" name="cognome"
+                                                   placeholder="Cognome">
+                                        </div>
+                                        <div class="col-4">
+                                            <label for="email">Email: </label>
+                                            <input type="email" class="form-control" id="email" name="email"
+                                                   placeholder="Email">
+                                        </div>
                                     </div>
-                                    <div class="col-8">
-                                    
+                                    <div class="row mt-2">
+
+                                        <div class="col-4">
+                                            <label for="data_nascita">Data di Nascita: </label>
+                                            <input type="date" class="form-control" id="data_nascita"
+                                                   name="data_nascita" placeholder="Data di Nascita">
+                                        </div>
+                                        <div class="col-8">
+                                            <label for="telefono">Telefono: </label>
+                                            <input type="text" class="form-control" id="telefono" name="telefono"
+                                                   placeholder="Telefono">
+                                        </div>
+
                                     </div>
-                                </div>
-                            
+                                    <div class="row mt-5">
+                                        <div class="col-4">
+                                            <button type="submit" class="btn btn-primary">Inserisci</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                        </div>
-HTML;
-                        echo $html;
-                        if ($count % 3 == 0) {
-                            echo '</div><div class="row">';
-                        }
-                        $count++;
-                    }
-                    ?>
-
-
+                    </div>
                 </div>
 
                 <!-- ############ PAGE END-->

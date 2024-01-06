@@ -30,4 +30,9 @@ class Admin
         $esercizi = $esercizio->esercizi_categorie();
         $this->view('esercizi', ['esercizi' => $esercizi]);
     }
+
+    public function addUser()
+    {
+        $this->view('addUser');
+    }
 }
