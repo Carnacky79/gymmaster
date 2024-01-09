@@ -16,7 +16,7 @@ trait Model
         return $this->query($query);
     }
 
-    public function where($data, $data_not = [])
+    public function where($data, $data_not = [], $one = false)
     {
         $keys = array_keys($data);
         $keys_not = array_keys($data_not);
@@ -33,6 +33,11 @@ trait Model
 
         $query = trim($query, " AND ");
         $query .= " order by $this->order_column $this->order_type";
+
+        if ($one) {
+            $query .= " limit 1";
+        }
+
 
         $data = array_merge($data, $data_not);
         return $this->query($query, $data);

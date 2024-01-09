@@ -54,9 +54,10 @@
                     <?php
                     $count = 1;
                     foreach ($data['iscritti'] as $iscritto) {
+                        $creaScheda = ROOT . '/admin/creaScheda?id=' . $iscritto->id;
                         //$imgs = IMG . '/esercizi/' . $esercizio->cat_nome . '/' . $esercizio->nome . '/' . str_replace('_', '-', $esercizio->nome) . '.gif';
                         $html = <<<HTML
-                        <div class="col">
+                        <div class="col-4">
                         <div class="box">
                             <div class="box-header">
                                 <h3>$iscritto->nome $iscritto->cognome</h3>
@@ -69,7 +70,7 @@
                                             <i class="material-icons md-18">&#xe5d4;</i>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-scale pull-right">
-                                            <a class="dropdown-item" href>Crea Scheda</a>
+                                            <a class="dropdown-item" href="$creaScheda">Crea Scheda</a>
 
                                             <div class="dropdown-divider"></div>
 

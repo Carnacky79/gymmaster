@@ -35,4 +35,31 @@ class Admin
     {
         $this->view('addUser');
     }
+
+    public function persistUser()
+    {
+        $iscritto = new Iscritto();
+        $data = [
+            'nome' => $_POST['nome'],
+            'cognome' => $_POST['cognome'],
+            'email' => $_POST['email'],
+            'data_nascita' => $_POST['data_nascita'],
+            'telefono' => $_POST['telefono'],
+            'id_palestra' => $_SESSION['user']->id,
+        ];
+        $iscritto->insert($data);
+        $this->redirect('admin/users');
+    }
+
+    public function creaScheda()
+    {
+        $schede = new Scheda();
+        $iscritto = new Iscritto();
+        $data = [
+            'id' => $_GET['id'],
+        ];
+        $iscritto = $iscritto->where($data);
+        $schede_iscritto = $schede->schede_iscritto($_GET['id']);
+        $this->view('creaScheda', ['iscritto' => $iscritto, 'schede' => $schede_iscritto]);
+    }
 }

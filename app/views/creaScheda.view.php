@@ -53,10 +53,10 @@
                     <div class="col">
                         <div class="box">
                             <div class="box-header">
-                                <h3>Inserisci nuovo Iscritto</h3>
+                                <h3>Associa nuova scheda a <?= $data['iscritto'][0]->nome ?></h3>
                             </div>
-                            <!--<div class="box-tool">
-                                <ul class="nav">
+                            <div class="box-tool">
+                                <!--<ul class="nav">
                                     <li class="nav-item inline dropdown">
                                         <a class="nav-link" data-toggle="dropdown">
                                             <i class="material-icons md-18">&#xe5d4;</i>
@@ -68,48 +68,38 @@
 
                                         </div>
                                     </li>
-                                </ul>
-                            </div>-->
+                                </ul>-->
+                            </div>
                             <div class="box-body">
-                                <form action="<?= ROOT . '/admin/persistuser' ?>" method="post">
-                                    <div class="row mt-3">
+                                <div class="row">
+                                    <div class="col">
+                                        <?php
+                                        $num_schede = count($data['schede']);
+                                        $scheda_link = ROOT . '/admin/scheda?id=';
+                                        if ($num_schede == 0) {
+                                            echo "<h3>Non ci sono schede per questo utente</h3>";
+                                        } else {
+                                            echo "<h3>Le schede di questo utente sono: </h3>";
+                                            foreach ($data['schede'] as $scheda) {
+                                                if ($scheda->attiva == 0) {
+                                                    echo "<div style='text-decoration: red line-through'>";
+                                                    echo "<h4>Scheda del $scheda->data</h4>";
+                                                    echo "<a href='$scheda_link$scheda->id' class='btn btn-outline b-danger text-primary rounded-pill'>Visualizza</a>";
+                                                } else {
+                                                    echo "<div>";
+                                                    echo "<h4>Scheda del $scheda->data</h4>";
+                                                    echo "<a href='$scheda_link$scheda->id' class='btn btn-outline b-accent text-primary rounded-pill'>Visualizza</a>";
+                                                }
 
-                                        <div class="col-4">
-                                            <label for="nome">Nome: </label>
-                                            <input type="text" class="form-control" id="nome" name="nome"
-                                                   placeholder="Nome">
-                                        </div>
-                                        <div class="col-4">
-                                            <label for="cognome">Cognome: </label>
-                                            <input type="text" class="form-control" id="cognome" name="cognome"
-                                                   placeholder="Cognome">
-                                        </div>
-                                        <div class="col-4">
-                                            <label for="email">Email: </label>
-                                            <input type="email" class="form-control" id="email" name="email"
-                                                   placeholder="Email">
-                                        </div>
-                                    </div>
-                                    <div class="row mt-2">
 
-                                        <div class="col-4">
-                                            <label for="data_nascita">Data di Nascita: </label>
-                                            <input type="date" class="form-control" id="data_nascita"
-                                                   name="data_nascita" placeholder="Data di Nascita">
-                                        </div>
-                                        <div class="col-4">
-                                            <label for="telefono">Telefono: </label>
-                                            <input type="text" class="form-control" id="telefono" name="telefono"
-                                                   placeholder="Telefono">
-                                        </div>
+                                                echo "</div>";
+                                                echo "<hr>";
+                                            }
+                                        }
+                                        ?>
 
                                     </div>
-                                    <div class="row mt-5">
-                                        <div class="col-4">
-                                            <button type="submit" class="btn btn-primary">Inserisci</button>
-                                        </div>
-                                    </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
