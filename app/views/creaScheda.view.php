@@ -73,13 +73,43 @@
                             <div class="box-body">
                                 <div class="row">
                                     <div class="col">
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="box">
+                            <div class="box-header">
+                                <h3>Lista Schede di <?= $data['iscritto'][0]->nome ?></h3>
+                            </div>
+                            <div class="box-tool">
+                                <!--<ul class="nav">
+                                    <li class="nav-item inline dropdown">
+                                        <a class="nav-link" data-toggle="dropdown">
+                                            <i class="material-icons md-18">&#xe5d4;</i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-scale pull-right">
+                                            <a class="dropdown-item" href>Crea Scheda</a>
+
+                                            <div class="dropdown-divider"></div>
+
+                                        </div>
+                                    </li>
+                                </ul>-->
+                            </div>
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col">
                                         <?php
-                                        $num_schede = count($data['schede']);
+                                        $num_schede = count($data['schede'] ? $data['schede'] : []);
                                         $scheda_link = ROOT . '/admin/scheda?id=';
                                         if ($num_schede == 0) {
-                                            echo "<h3>Non ci sono schede per questo utente</h3>";
+                                            echo "<p>Non ci sono schede per questo utente</p>";
                                         } else {
-                                            echo "<h3>Le schede di questo utente sono: </h3>";
+                                            echo "<p>Le schede di questo utente sono: </p>";
                                             foreach ($data['schede'] as $scheda) {
                                                 if ($scheda->attiva == 0) {
                                                     echo "<div style='text-decoration: red line-through'>";

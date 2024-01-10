@@ -6,3 +6,84 @@
 [26-Nov-2023 16:40:31 UTC] PHP Warning:  Undefined array key "url" in C:\Users\Admin\PhpstormProjects\gyn\app\core\App.php on line 12
 [04-Jan-2024 08:48:33 UTC] PHP Warning:  Undefined array key "email" in C:\Users\Admin\PhpstormProjects\gyn\app\controllers\Login.php on line 11
 [04-Jan-2024 08:48:33 UTC] PHP Warning:  Undefined array key "password" in C:\Users\Admin\PhpstormProjects\gyn\app\controllers\Login.php on line 12
+[10-Jan-2024 13:55:01 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'utenti.data_iscrizione' in 'field list' in C:\Users\Admin\PhpstormProjects\gyn\app\core\Database.php:12
+Stack trace:
+#0 C:\Users\Admin\PhpstormProjects\gyn\app\core\Database.php(12): PDOStatement->execute(Array)
+#1 C:\Users\Admin\PhpstormProjects\gyn\app\models\Iscritto.php(16): Iscritto->query('select DATE_FOR...', Array)
+#2 C:\Users\Admin\PhpstormProjects\gyn\app\controllers\Admin.php(23): Iscritto->iscritti_palestra()
+#3 C:\Users\Admin\PhpstormProjects\gyn\app\core\App.php(39): Admin->users()
+#4 C:\Users\Admin\PhpstormProjects\gyn\public\index.php(10): App->loadController()
+#5 {main}
+  thrown in C:\Users\Admin\PhpstormProjects\gyn\app\core\Database.php on line 12
+[10-Jan-2024 13:55:01 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'utenti.data_iscrizione' in 'field list' in C:\Users\Admin\PhpstormProjects\gyn\app\core\Database.php:12
+Stack trace:
+#0 C:\Users\Admin\PhpstormProjects\gyn\app\core\Database.php(12): PDOStatement->execute(Array)
+#1 C:\Users\Admin\PhpstormProjects\gyn\app\models\Iscritto.php(16): Iscritto->query('select DATE_FOR...', Array)
+#2 C:\Users\Admin\PhpstormProjects\gyn\app\controllers\Admin.php(23): Iscritto->iscritti_palestra()
+#3 C:\Users\Admin\PhpstormProjects\gyn\app\core\App.php(39): Admin->users()
+#4 C:\Users\Admin\PhpstormProjects\gyn\public\index.php(10): App->loadController()
+#5 {main}
+  thrown in C:\Users\Admin\PhpstormProjects\gyn\app\core\Database.php on line 12
+[10-Jan-2024 13:55:02 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'utenti.data_iscrizione' in 'field list' in C:\Users\Admin\PhpstormProjects\gyn\app\core\Database.php:12
+Stack trace:
+#0 C:\Users\Admin\PhpstormProjects\gyn\app\core\Database.php(12): PDOStatement->execute(Array)
+#1 C:\Users\Admin\PhpstormProjects\gyn\app\models\Iscritto.php(16): Iscritto->query('select DATE_FOR...', Array)
+#2 C:\Users\Admin\PhpstormProjects\gyn\app\controllers\Admin.php(23): Iscritto->iscritti_palestra()
+#3 C:\Users\Admin\PhpstormProjects\gyn\app\core\App.php(39): Admin->users()
+#4 C:\Users\Admin\PhpstormProjects\gyn\public\index.php(10): App->loadController()
+#5 {main}
+  thrown in C:\Users\Admin\PhpstormProjects\gyn\app\core\Database.php on line 12
+[10-Jan-2024 14:29:25 UTC] PHP Warning:  Undefined array key "user" in C:\Users\Admin\PhpstormProjects\gyn\app\models\Iscritto.php on line 16
+[10-Jan-2024 14:29:25 UTC] PHP Warning:  Attempt to read property "id" on null in C:\Users\Admin\PhpstormProjects\gyn\app\models\Iscritto.php on line 16
+[10-Jan-2024 14:29:25 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'utenti.data_iscrizione' in 'field list' in C:\Users\Admin\PhpstormProjects\gyn\app\core\Database.php:12
+Stack trace:
+#0 C:\Users\Admin\PhpstormProjects\gyn\app\core\Database.php(12): PDOStatement->execute(Array)
+#1 C:\Users\Admin\PhpstormProjects\gyn\app\models\Iscritto.php(16): Iscritto->query('select DATE_FOR...', Array)
+#2 C:\Users\Admin\PhpstormProjects\gyn\app\controllers\Admin.php(23): Iscritto->iscritti_palestra()
+#3 C:\Users\Admin\PhpstormProjects\gyn\app\core\App.php(39): Admin->users()
+#4 C:\Users\Admin\PhpstormProjects\gyn\public\index.php(10): App->loadController()
+#5 {main}
+  thrown in C:\Users\Admin\PhpstormProjects\gyn\app\core\Database.php on line 12
+[10-Jan-2024 14:29:25 UTC] PHP Warning:  Undefined array key "user" in C:\Users\Admin\PhpstormProjects\gyn\app\models\Iscritto.php on line 16
+[10-Jan-2024 14:29:25 UTC] PHP Warning:  Attempt to read property "id" on null in C:\Users\Admin\PhpstormProjects\gyn\app\models\Iscritto.php on line 16
+[10-Jan-2024 14:29:25 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'utenti.data_iscrizione' in 'field list' in C:\Users\Admin\PhpstormProjects\gyn\app\core\Database.php:12
+Stack trace:
+#0 C:\Users\Admin\PhpstormProjects\gyn\app\core\Database.php(12): PDOStatement->execute(Array)
+#1 C:\Users\Admin\PhpstormProjects\gyn\app\models\Iscritto.php(16): Iscritto->query('select DATE_FOR...', Array)
+#2 C:\Users\Admin\PhpstormProjects\gyn\app\controllers\Admin.php(23): Iscritto->iscritti_palestra()
+#3 C:\Users\Admin\PhpstormProjects\gyn\app\core\App.php(39): Admin->users()
+#4 C:\Users\Admin\PhpstormProjects\gyn\public\index.php(10): App->loadController()
+#5 {main}
+  thrown in C:\Users\Admin\PhpstormProjects\gyn\app\core\Database.php on line 12
+[10-Jan-2024 20:20:00 UTC] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, bool given in C:\Users\Admin\PhpstormProjects\gyn\app\views\creaScheda.view.php:77
+Stack trace:
+#0 C:\Users\Admin\PhpstormProjects\gyn\app\core\Controller.php(11): require()
+#1 C:\Users\Admin\PhpstormProjects\gyn\app\controllers\Admin.php(63): Admin->view('creaScheda', Array)
+#2 C:\Users\Admin\PhpstormProjects\gyn\app\core\App.php(39): Admin->creaScheda()
+#3 C:\Users\Admin\PhpstormProjects\gyn\public\index.php(10): App->loadController()
+#4 {main}
+  thrown in C:\Users\Admin\PhpstormProjects\gyn\app\views\creaScheda.view.php on line 77
+[10-Jan-2024 20:20:00 UTC] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, bool given in C:\Users\Admin\PhpstormProjects\gyn\app\views\creaScheda.view.php:77
+Stack trace:
+#0 C:\Users\Admin\PhpstormProjects\gyn\app\core\Controller.php(11): require()
+#1 C:\Users\Admin\PhpstormProjects\gyn\app\controllers\Admin.php(63): Admin->view('creaScheda', Array)
+#2 C:\Users\Admin\PhpstormProjects\gyn\app\core\App.php(39): Admin->creaScheda()
+#3 C:\Users\Admin\PhpstormProjects\gyn\public\index.php(10): App->loadController()
+#4 {main}
+  thrown in C:\Users\Admin\PhpstormProjects\gyn\app\views\creaScheda.view.php on line 77
+[10-Jan-2024 20:23:27 UTC] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, bool given in C:\Users\Admin\PhpstormProjects\gyn\app\views\creaScheda.view.php:107
+Stack trace:
+#0 C:\Users\Admin\PhpstormProjects\gyn\app\core\Controller.php(11): require()
+#1 C:\Users\Admin\PhpstormProjects\gyn\app\controllers\Admin.php(63): Admin->view('creaScheda', Array)
+#2 C:\Users\Admin\PhpstormProjects\gyn\app\core\App.php(39): Admin->creaScheda()
+#3 C:\Users\Admin\PhpstormProjects\gyn\public\index.php(10): App->loadController()
+#4 {main}
+  thrown in C:\Users\Admin\PhpstormProjects\gyn\app\views\creaScheda.view.php on line 107
+[10-Jan-2024 20:23:27 UTC] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, bool given in C:\Users\Admin\PhpstormProjects\gyn\app\views\creaScheda.view.php:107
+Stack trace:
+#0 C:\Users\Admin\PhpstormProjects\gyn\app\core\Controller.php(11): require()
+#1 C:\Users\Admin\PhpstormProjects\gyn\app\controllers\Admin.php(63): Admin->view('creaScheda', Array)
+#2 C:\Users\Admin\PhpstormProjects\gyn\app\core\App.php(39): Admin->creaScheda()
+#3 C:\Users\Admin\PhpstormProjects\gyn\public\index.php(10): App->loadController()
+#4 {main}
+  thrown in C:\Users\Admin\PhpstormProjects\gyn\app\views\creaScheda.view.php on line 107
