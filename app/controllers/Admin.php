@@ -62,4 +62,24 @@ class Admin
         $schede_iscritto = $schede->schede_iscritto($_GET['id']);
         $this->view('creaScheda', ['iscritto' => $iscritto, 'schede' => $schede_iscritto]);
     }
+
+    public function nuovascheda()
+    {
+        $scheda = new Scheda();
+        $iscritto = new Iscritto();
+        $data = [
+            'id' => $_POST['id_iscritto'],
+        ];
+        $iscritto = $iscritto->where($data);
+        $data = [
+            'id_utente' => $_POST['id_iscritto'],
+            'attiva' => 0,
+        ];
+        $scheda_nuova = $scheda->insert($data);
+        $this->dettaglioScheda(['iscritto' => $iscritto, 'scheda' => $scheda_nuova]);
+    }
+
+    public function dettaglioScheda($data = []){
+        $this->view('dettaglioscheda', ['iscritto' => $data['iscritto'], 'scheda' => $data['scheda']]);
+    }
 }

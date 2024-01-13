@@ -14,6 +14,8 @@ Trait Database {
             $result = $stm->fetchAll(PDO::FETCH_OBJ);
 
             if(is_array($result) && count($result)) return $result;
+            else return $con->lastInsertId();
+
         }
         return false;
     }

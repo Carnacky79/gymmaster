@@ -53,7 +53,7 @@
                     <div class="col">
                         <div class="box">
                             <div class="box-header">
-                                <h3>Associa nuova scheda a <?= $data['iscritto'][0]->nome ?></h3>
+                                <h3>Nuova scheda di <?= $data['iscritto'][0]->nome ?></h3>
                             </div>
                             <div class="box-tool">
                                 <!--<ul class="nav">
@@ -73,11 +73,9 @@
                             <div class="box-body">
                                 <div class="row">
                                     <div class="col">
-                                        <form action="<?=ROOT."/admin/nuovascheda" ?>" method="post">
-                                            <input type="hidden" name="id_iscritto" value="<?= $data['iscritto'][0]->id ?>">
-                                            <button type="submit" class="btn btn-outline b-primary text-primary rounded-pill">Crea nuova Scheda</button>
-                                        </form>
-
+                                        <?php
+                                        var_dump($data['scheda']);
+                                        ?>
                                     </div>
                                 </div>
                             </div>
@@ -106,32 +104,7 @@
                             <div class="box-body">
                                 <div class="row">
                                     <div class="col">
-                                        <?php
-                                        $num_schede = count($data['schede'] ? $data['schede'] : []);
-                                        $scheda_link = ROOT . '/admin/dettaglioscheda';
-                                        if ($num_schede == 0) {
-                                            echo "<p>Non ci sono schede per questo utente</p>";
-                                        } else {
-                                            echo "<p>Le schede di questo utente sono: </p>";
-                                            foreach ($data['schede'] as $scheda) {
-                                                if ($scheda->attiva == 0) {
-                                                    echo "<div style='text-decoration: red line-through'>";
-                                                    echo "<h4>Scheda del $scheda->data</h4>";
-                                                    echo "<form action='$scheda_link' method='post'><input type='hidden' name='id_scheda' value='$scheda->id'>
-                                        <button type='submit' class='btn btn-outline b-danger text-primary rounded-pill'>Visualizza</button></form> ";
-                                                } else {
-                                                    echo "<div>";
-                                                    echo "<h4>Scheda del $scheda->data</h4>";
-                                                    echo "<form action='$scheda_link' method='post'><input type='hidden' name='id_scheda' value='$scheda->id'>
-                                        <button type='submit' class='btn btn-outline b-primary text-primary rounded-pill'>Visualizza</button></form> ";
-                                                }
 
-
-                                                echo "</div>";
-                                                echo "<hr>";
-                                            }
-                                        }
-                                        ?>
 
                                     </div>
                                 </div>

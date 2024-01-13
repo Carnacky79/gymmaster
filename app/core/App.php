@@ -35,7 +35,6 @@ class App
                 unset($URL[1]);
             }
         }
-
         call_user_func_array([$controller, $this->method], $URL);
     }
 }
