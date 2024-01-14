@@ -15,4 +15,5 @@ class Scheda
         $query .= "where schede.id_utente = :id_utente order by schede.attiva desc, schede.data desc";
         return $this->query($query, ['id_utente' => $id_iscritto,]);
     }
+    
 }

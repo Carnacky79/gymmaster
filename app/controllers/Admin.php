@@ -65,21 +65,24 @@ class Admin
 
     public function nuovascheda()
     {
-        $scheda = new Scheda();
-        $iscritto = new Iscritto();
-        $data = [
-            'id' => $_POST['id_iscritto'],
-        ];
-        $iscritto = $iscritto->where($data);
-        $data = [
-            'id_utente' => $_POST['id_iscritto'],
-            'attiva' => 0,
-        ];
-        $scheda_nuova = $scheda->insert($data);
-        $this->dettaglioScheda(['iscritto' => $iscritto, 'scheda' => $scheda_nuova]);
+        if (isset($_POST['id_iscritto'])) {
+            $scheda = new Scheda();
+            $iscritto = new Iscritto();
+            $data = [
+                'id' => $_POST['id_iscritto'],
+            ];
+            $iscritto = $iscritto->where($data);
+            $data = [
+                'id_utente' => $_POST['id_iscritto'],
+                'attiva' => 0,
+            ];
+            $scheda_nuova = $scheda->insert($data);
+        }
+        $this->associaSchedaEsercizio(['iscritto' => $iscritto, 'scheda' => $scheda_nuova]);
     }
 
-    public function dettaglioScheda($data = []){
-        $this->view('dettaglioscheda', ['iscritto' => $data['iscritto'], 'scheda' => $data['scheda']]);
+    public function associaSchedaEsercizio($data = [])
+    {
+        $this->view('esercizioscheda', ['iscritto' => $data['iscritto'], 'scheda' => $data['scheda']]);
     }
 }
