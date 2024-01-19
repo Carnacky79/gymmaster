@@ -87,13 +87,27 @@ class Admin
         $esercizi = $esercizio->esercizi_categorie();
         $scheda = new Scheda();
         $scheda = $scheda->where(['id' => $data['scheda']]);
-        $this->view('esercizioscheda', ['iscritto' => $data['iscritto'], 'scheda' => $scheda[0], 'esercizi' => $esercizi]);
+        $categorie = new Categoria();
+        $categorie = $categorie->findAll();
+        $this->view('esercizioscheda', ['iscritto' => $data['iscritto'], 'scheda' => $scheda[0], 'esercizi' => $esercizi, 'categorie' => $categorie]);
     }
 
     public function associaSchedaEsercizi()
     {
         $id_scheda = $_POST['id_scheda'];
         $esercizi = $_POST['esercizi'];
+        $attiva = $_POST['attiva'];
+
+        $scheda = new Scheda();
+        $schede = $scheda->schede_iscritto($_POST['id_iscritto']);
+
+        if ($attiva == 1) {
+            $scheda->update($id_scheda, ['attiva' => 1]);
+            foreach ($schede as $s) {
+                $scheda->update(['attiva' => 0], ['id' => $s->id]);
+            }
+        }
+
         foreach ($esercizi as $es) {
             foreach ($_POST as $key => $value) {
                 if (substr($key, strpos($key, "_") + 1) == $es)

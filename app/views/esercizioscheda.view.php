@@ -74,7 +74,8 @@
                                 <div class="row">
                                     <div class="col">
                                         <?php
-                                        var_dump($data['scheda']);
+                                        echo "<h3>Inserisci Esercizi per la scheda di " . $data['iscritto'][0]->nome . "</h3>";
+                                        echo "<h5>La scheda è stata creata il " . $data['scheda']->data . "</h5>";
                                         ?>
                                     </div>
                                 </div>
@@ -84,7 +85,7 @@
                     <div class="col-8">
                         <div class="box">
                             <div class="box-header">
-                                <h3>Lista Schede di <?= $data['iscritto'][0]->nome ?></h3>
+                                <h3>Esercizi per <?= $data['iscritto'][0]->nome ?></h3>
                             </div>
                             <div class="box-tool">
                                 <!--<ul class="nav">
@@ -107,45 +108,77 @@
                                         <form action="<?php echo ROOT . '/admin/associaSchedaEsercizi'; ?>"
                                               method="post">
                                             <?php
-
-                                            foreach ($data['esercizi'] as $esercizio) {
-                                                $es = str_replace('_', ' ', $esercizio->nome);
+                                            foreach ($data['categorie'] as $cat) {
                                                 echo <<<HTML
-                                            
-                                            <div class="row">
-                                                <div class="col-1">
-                                                    <input type="checkbox"
-                                                           name="esercizi[]" value="$esercizio->id" aria-label="...">
+                                                    <div id="accordion">
+                                                      <div class="card">
+                                                        <div class="card-header" id="heading$cat->nome">
+                                                          <h5 class="mb-0">
+                                                            <button class="btn btn-link collapsed" aria-expanded="false" data-toggle="collapse" data-target="#collapse$cat->nome" aria-controls="collapse$cat->nome">
+                                                              $cat->nome
+                                                            </button>
+                                                          </h5>
+                                                        </div>
+                                                        <div id="collapse$cat->nome" class="collapse" aria-labelledby="heading$cat->nome" data-parent="#accordion">
+                                                          <div class="card-body pt-3">
+HTML;
+
+                                                foreach ($data['esercizi'] as $esercizio) {
+                                                    $es = str_replace('_', ' ', $esercizio->nome);
+                                                    if ($esercizio->id_categoria == $cat->id) {
+
+                                                        echo <<<HTML
+                                                
+                                                <div class="row">
+                                                    <div class="col-1">
+                                                        <input type="checkbox"
+                                                               name="esercizi[]" value="$esercizio->id" aria-label="...">
+                                                    </div>
+                                                    <div class="col-3">
+                                                        $es
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control" name="serie_$esercizio->id"
+                                                               placeholder="Serie">
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control" name="rep_$esercizio->id"
+                                                               aria-describedby="" placeholder="Reps">
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control" name="recupero_$esercizio->id"
+                                                               aria-describedby="" placeholder="Recupero">
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control" name="carico_$esercizio->id"
+                                                               aria-describedby="" placeholder="Carico">
+                                                    </div>
                                                 </div>
-                                                <div class="col-3">
-                                                    $es
+    HTML;
+                                                    }
+
+                                                }
+                                                echo <<<HTML
                                                 </div>
-                                                <div class="col-2">
-                                                    <input type="text" class="form-control" name="serie_$esercizio->id"
-                                                           placeholder="Serie">
+                                                    </div>
+                                                  </div>
                                                 </div>
-                                                <div class="col-2">
-                                                    <input type="text" class="form-control" name="rep_$esercizio->id"
-                                                           aria-describedby="" placeholder="Reps">
-                                                </div>
-                                                <div class="col-2">
-                                                    <input type="text" class="form-control" name="recupero_$esercizio->id"
-                                                           aria-describedby="" placeholder="Recupero">
-                                                </div>
-                                                <div class="col-2">
-                                                    <input type="text" class="form-control" name="carico_$esercizio->id"
-                                                           aria-describedby="" placeholder="Carico">
-                                                </div>
-                                            </div>
 HTML;
 
                                             }
 
                                             ?>
-                                            <div class="row">
-                                                <div class="col-12">
+                                            <div class="row mt-4">
+                                                <div class="form-check col-2">
+                                                    <input type="checkbox" class="checkbox-inline" id="attiva"
+                                                           name="attiva">
+                                                    <label class="custom-control-label" for="attiva">Attiva</label>
+                                                </div>
+                                                <div class="col-10">
                                                     <input type="hidden" name="id_scheda"
                                                            value="<?= $data['scheda']->id ?>">
+                                                    <input type="hidden" name="id_iscritto"
+                                                           value="<?= $data['iscritto'][0]->id ?>">
                                                     <button type="submit" class="btn btn-primary">Associa</button>
                                                 </div>
                                             </div>
