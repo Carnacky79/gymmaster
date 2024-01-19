@@ -97,9 +97,11 @@ class Admin
         $id_scheda = $_POST['id_scheda'];
         $esercizi = $_POST['esercizi'];
         $attiva = $_POST['attiva'];
+        $iscritto = new Iscritto();
+        $iscritto = $iscritto->where(['id' => $_POST['id_iscritto']]);
 
         $scheda = new Scheda();
-        $schede = $scheda->schede_iscritto($_POST['id_iscritto']);
+        $schede = $scheda->schede_iscritto($iscritto[0]->id);
 
         if ($attiva == 1) {
             $scheda->update($id_scheda, ['attiva' => 1]);
@@ -118,5 +120,7 @@ class Admin
             $associazione = new Associazione();
             $associazione->insert($data);
         }
+
+        $this->view('creaScheda', ['iscritto' => $iscritto, 'schede' => $schede]);
     }
 }
