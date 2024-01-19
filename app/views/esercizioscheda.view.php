@@ -50,7 +50,7 @@
                     <h5 class="mb-0 _300">Ciao <?= $_SESSION['user']->nome ?></h5>
                 </div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col-4">
                         <div class="box">
                             <div class="box-header">
                                 <h3>Nuova scheda di <?= $data['iscritto'][0]->nome ?></h3>
@@ -81,7 +81,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-8">
                         <div class="box">
                             <div class="box-header">
                                 <h3>Lista Schede di <?= $data['iscritto'][0]->nome ?></h3>
@@ -103,9 +103,53 @@
                             </div>
                             <div class="box-body">
                                 <div class="row">
-                                    <div class="col">
+                                    <div class="col-8">
+                                        <form action="<?php echo ROOT . '/admin/associaSchedaEsercizi'; ?>"
+                                              method="post">
+                                            <?php
 
+                                            foreach ($data['esercizi'] as $esercizio) {
+                                                $es = str_replace('_', ' ', $esercizio->nome);
+                                                echo <<<HTML
+                                            
+                                            <div class="row">
+                                                <div class="col-1">
+                                                    <input type="checkbox"
+                                                           name="esercizi[]" value="$esercizio->id" aria-label="...">
+                                                </div>
+                                                <div class="col-3">
+                                                    $es
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" class="form-control" name="serie_$esercizio->id"
+                                                           placeholder="Serie">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" class="form-control" name="rep_$esercizio->id"
+                                                           aria-describedby="" placeholder="Reps">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" class="form-control" name="recupero_$esercizio->id"
+                                                           aria-describedby="" placeholder="Recupero">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" class="form-control" name="carico_$esercizio->id"
+                                                           aria-describedby="" placeholder="Carico">
+                                                </div>
+                                            </div>
+HTML;
 
+                                            }
+
+                                            ?>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <input type="hidden" name="id_scheda"
+                                                           value="<?= $data['scheda']->id ?>">
+                                                    <button type="submit" class="btn btn-primary">Associa</button>
+                                                </div>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

@@ -78,11 +78,31 @@ class Admin
             ];
             $scheda_nuova = $scheda->insert($data);
         }
-        $this->associaSchedaEsercizio(['iscritto' => $iscritto, 'scheda' => $scheda_nuova]);
+        $this->mostraNuovaScheda(['iscritto' => $iscritto, 'scheda' => $scheda_nuova]);
     }
 
-    public function associaSchedaEsercizio($data = [])
+    public function mostraNuovaScheda($data = [])
     {
-        $this->view('esercizioscheda', ['iscritto' => $data['iscritto'], 'scheda' => $data['scheda']]);
+        $esercizio = new Esercizio();
+        $esercizi = $esercizio->esercizi_categorie();
+        $scheda = new Scheda();
+        $scheda = $scheda->where(['id' => $data['scheda']]);
+        $this->view('esercizioscheda', ['iscritto' => $data['iscritto'], 'scheda' => $scheda[0], 'esercizi' => $esercizi]);
+    }
+
+    public function associaSchedaEsercizi()
+    {
+        $id_scheda = $_POST['id_scheda'];
+        $esercizi = $_POST['esercizi'];
+        foreach ($esercizi as $es) {
+            foreach ($_POST as $key => $value) {
+                if (substr($key, strpos($key, "_") + 1) == $es)
+                    $data[substr($key, 0, strpos($key, "_"))] = $value == '' ? null : $value;
+            }
+            $data['id_esercizio'] = $es;
+            $data['id_scheda'] = $id_scheda;
+            $associazione = new Associazione();
+            $associazione->insert($data);
+        }
     }
 }
