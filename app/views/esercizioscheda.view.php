@@ -104,7 +104,7 @@
                             </div>
                             <div class="box-body">
                                 <div class="row">
-                                    <div class="col-8">
+                                    <div class="col">
                                         <form action="<?php echo ROOT . '/admin/associaSchedaEsercizi'; ?>"
                                               method="post">
                                             <?php
@@ -171,7 +171,7 @@ HTML;
                                             <div class="row mt-4">
                                                 <div class="form-check col-2">
                                                     <input type="checkbox" class="checkbox-inline" id="attiva"
-                                                           name="attiva">
+                                                           name="attiva" value="1">
                                                     <label class="custom-control-label" for="attiva">Attiva</label>
                                                 </div>
                                                 <div class="col-10">

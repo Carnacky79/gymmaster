@@ -105,8 +105,14 @@ class Admin
 
         if ($attiva == 1) {
             $scheda->update($id_scheda, ['attiva' => 1]);
+
             foreach ($schede as $s) {
-                $scheda->update(['attiva' => 0], ['id' => $s->id]);
+
+
+                if($s->id != $id_scheda){
+                    $scheda->update($s->id, ['attiva' => 0]);
+                }
+                    //
             }
         }
 
@@ -121,6 +127,7 @@ class Admin
             $associazione->insert($data);
         }
 
+        $schede = $scheda->schede_iscritto($iscritto[0]->id);
         $this->view('creaScheda', ['iscritto' => $iscritto, 'schede' => $schede]);
     }
 }
