@@ -71,7 +71,7 @@
                                         <a class="nav-link" data-toggle="dropdown">
                                             <i class="material-icons md-18">&#xe5d4;</i>
                                         </a>
-                                        <div class="dropdown-menu dropdown-menu-scale pull-right">
+                                        <div class="text-center dropdown-menu dropdown-menu-scale pull-right">
                                             <a class="dropdown-item" href="$creaScheda">Dettagli</a>
 
                                             <div class="dropdown-divider"></div>
@@ -80,7 +80,7 @@
                                             <input type="hidden" name="id_iscritto"
                                                    value="$iscrittoID">
                                             <button type="submit"
-                                                    class="btn btn-outline b-primary text-primary rounded-pill">Crea
+                                                    class="btn btn-outline b-primary text-primary rounded-pill btn-sm">Crea
                                                 nuova Scheda
                                             </button>
                                         </form>
