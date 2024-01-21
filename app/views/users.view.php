@@ -55,6 +55,8 @@
                     $count = 1;
                     foreach ($data['iscritti'] as $iscritto) {
                         $creaScheda = ROOT . '/admin/creaScheda?id=' . $iscritto->id;
+                        $nuovaScheda = ROOT . "/admin/nuovascheda";
+                        $iscrittoID = $iscritto->id;
                         //$imgs = IMG . '/esercizi/' . $esercizio->cat_nome . '/' . $esercizio->nome . '/' . str_replace('_', '-', $esercizio->nome) . '.gif';
                         $html = <<<HTML
                         <div class="col-4">
@@ -70,9 +72,18 @@
                                             <i class="material-icons md-18">&#xe5d4;</i>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-scale pull-right">
-                                            <a class="dropdown-item" href="$creaScheda">Crea Scheda</a>
+                                            <a class="dropdown-item" href="$creaScheda">Dettagli</a>
 
                                             <div class="dropdown-divider"></div>
+                                            
+                                            <form action="$nuovaScheda" method="post">
+                                            <input type="hidden" name="id_iscritto"
+                                                   value="$iscrittoID">
+                                            <button type="submit"
+                                                    class="btn btn-outline b-primary text-primary rounded-pill">Crea
+                                                nuova Scheda
+                                            </button>
+                                        </form>
 
                                         </div>
                                     </li>
