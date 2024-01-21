@@ -671,3 +671,14 @@ Stack trace:
 #4 C:\Users\Admin\PhpstormProjects\gym\public\index.php(10): App->loadController()
 #5 {main}
   thrown in C:\Users\Admin\PhpstormProjects\gym\app\core\Database.php on line 12
+[21-Jan-2024 21:49:58 UTC] PHP Warning:  Undefined array key "id_scheda" in C:\Users\Admin\PhpstormProjects\gym\app\controllers\Admin.php on line 136
+[21-Jan-2024 21:49:58 UTC] PHP Warning:  Undefined array key "id_iscritto" in C:\Users\Admin\PhpstormProjects\gym\app\controllers\Admin.php on line 138
+[21-Jan-2024 21:49:58 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 14 in C:\Users\Admin\PhpstormProjects\gym\app\core\Database.php:12
+Stack trace:
+#0 C:\Users\Admin\PhpstormProjects\gym\app\core\Database.php(12): PDOStatement->execute(Array)
+#1 C:\Users\Admin\PhpstormProjects\gym\app\models\Associazione.php(28): Associazione->query('SELECT DISTINCT...')
+#2 C:\Users\Admin\PhpstormProjects\gym\app\controllers\Admin.php(144): Associazione->esercizi_scheda_utente(NULL)
+#3 C:\Users\Admin\PhpstormProjects\gym\app\core\App.php(38): Admin->dettaglioscheda()
+#4 C:\Users\Admin\PhpstormProjects\gym\public\index.php(10): App->loadController()
+#5 {main}
+  thrown in C:\Users\Admin\PhpstormProjects\gym\app\core\Database.php on line 12
