@@ -1,4 +1,4 @@
-<div id="switcher">
+<!--<div id="switcher">
     <div class="switcher box-color dark-white text-color" id="sw-theme">
         <a href ui-toggle-class="active" target="#sw-theme" class="box-color dark-white text-color sw-btn">
             <i class="fa fa-gear"></i>
@@ -30,4 +30,4 @@
     </div>
 
 
-</div>
+</div>-->

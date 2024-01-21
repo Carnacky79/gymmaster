@@ -109,10 +109,10 @@ class Admin
             foreach ($schede as $s) {
 
 
-                if($s->id != $id_scheda){
+                if ($s->id != $id_scheda) {
                     $scheda->update($s->id, ['attiva' => 0]);
                 }
-                    //
+                //
             }
         }
 
@@ -129,5 +129,20 @@ class Admin
 
         $schede = $scheda->schede_iscritto($iscritto[0]->id);
         $this->view('creaScheda', ['iscritto' => $iscritto, 'schede' => $schede]);
+    }
+
+    public function dettaglioscheda()
+    {
+        $id_scheda = $_POST['id_scheda'];
+        $iscritto = new Iscritto();
+        $iscritto = $iscritto->where(['id' => $_POST['id_iscritto']]);
+
+        $scheda = new Scheda();
+        $scheda = $scheda->where(['id' => $id_scheda]);
+
+        $associazione = new Associazione();
+
+        var_dump($_POST);
+        //echo "hello world";
     }
 }

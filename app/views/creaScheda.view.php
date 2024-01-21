@@ -73,9 +73,13 @@
                             <div class="box-body">
                                 <div class="row">
                                     <div class="col">
-                                        <form action="<?=ROOT."/admin/nuovascheda" ?>" method="post">
-                                            <input type="hidden" name="id_iscritto" value="<?= $data['iscritto'][0]->id ?>">
-                                            <button type="submit" class="btn btn-outline b-primary text-primary rounded-pill">Crea nuova Scheda</button>
+                                        <form action="<?= ROOT . "/admin/nuovascheda" ?>" method="post">
+                                            <input type="hidden" name="id_iscritto"
+                                                   value="<?= $data['iscritto'][0]->id ?>">
+                                            <button type="submit"
+                                                    class="btn btn-outline b-primary text-primary rounded-pill">Crea
+                                                nuova Scheda
+                                            </button>
                                         </form>
 
                                     </div>
@@ -109,6 +113,7 @@
                                         <?php
                                         $num_schede = count($data['schede'] ? $data['schede'] : []);
                                         $scheda_link = ROOT . '/admin/dettaglioscheda';
+                                        $id_iscritto = $data['iscritto'][0]->id;
                                         if ($num_schede == 0) {
                                             echo "<p>Non ci sono schede per questo utente</p>";
                                         } else {
@@ -117,13 +122,15 @@
                                                 if ($scheda->attiva == 0) {
                                                     echo "<div style='text-decoration: red line-through'>";
                                                     echo "<h4>Scheda del $scheda->data</h4>";
+
                                                     echo "<form action='$scheda_link' method='post'><input type='hidden' name='id_scheda' value='$scheda->id'>
+                                        <input type='hidden' name='id_iscritto' value='$id_iscritto'>
                                         <button type='submit' class='btn btn-outline b-danger text-primary rounded-pill'>Visualizza</button></form> ";
                                                 } else {
                                                     echo "<div>";
                                                     echo "<h4>Scheda del $scheda->data</h4>";
                                                     echo "<form action='$scheda_link' method='post'><input type='hidden' name='id_scheda' value='$scheda->id'>
-                                        <button type='submit' class='btn btn-outline b-primary text-primary rounded-pill'>Visualizza</button></form> ";
+                                        <input type='hidden' name='id_iscritto' value='$id_iscritto'><button type='submit' class='btn btn-outline b-primary text-primary rounded-pill'>Visualizza</button></form> ";
                                                 }
 
 
