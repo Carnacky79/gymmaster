@@ -140,9 +140,9 @@ class Admin
         $scheda = new Scheda();
         $scheda = $scheda->where(['id' => $id_scheda]);
 
-        $associazione = new Associazione();
+        $esercizo = new Associazione();
+        $esercizi = $esercizo->esercizi_scheda_utente($id_scheda);
 
-        var_dump($_POST);
-        //echo "hello world";
+        $this->view('dettaglioscheda', ['iscritto' => $iscritto, 'scheda' => $scheda[0], 'esercizi' => $esercizi]);
     }
 }

@@ -1,10 +1,8 @@
-<div class="dropdown-menu">
-    <a class="dropdown-item" ui-sref="app.inbox.compose" href="<?= ROOT ?>/admin/adduser">
-        <span>Utente</span>
+<div>
+    <a href="<?= ROOT ?>/admin/adduser" class="btn btn-outline-primary mr-3">
+        <span>Aggiungi Utente</span>
     </a>
-    <a class="dropdown-item" ui-sref="app.todo" href="<?= ROOT ?>/admin/addesercizio">
-        <span>Esercizio</span>
+    <a href="<?= ROOT ?>/admin/addesercizio" class="btn btn-outline-warning">
+        <span>Aggiungi Esercizio</span>
     </a>
-    <div class="dropdown-divider"></div>
-    <a class="dropdown-item" ui-sref="app.contact">Contatto</a>
 </div>

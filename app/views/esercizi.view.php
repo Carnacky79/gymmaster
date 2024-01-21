@@ -22,29 +22,14 @@
                 <!-- navbar collapse -->
                 <div class="collapse navbar-collapse" id="collapse">
                     <!-- link and dropdown -->
-
+                    <?php require 'parts/dropdown.new.php' ?>
 
                     <!-- <div ui-include="'<?= ASSETS ?>/views/blocks/navbar.form.html'"></div> -->
                 </div>
                 <!-- / navbar collapse -->
 
                 <!-- navbar right -->
-                <ul class="nav navbar-nav ml-auto flex-row">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link p-0 clear" href="#" data-toggle="dropdown">
-                  <span class="avatar w-32">
-                    <img src="<?= ASSETS ?>/images/a0.jpg" alt="...">
-                    <i class="on b-white bottom"></i>
-                  </span>
-                        </a>
-                        <div ui-include="'<?= ASSETS ?>/views/blocks/dropdown.user.html'"></div>
-                    </li>
-                    <li class="nav-item hidden-md-up">
-                        <a class="nav-link pl-2" data-toggle="collapse" data-target="#collapse">
-                            <i class="material-icons">&#xe5d4;</i>
-                        </a>
-                    </li>
-                </ul>
+                <?php require 'parts/navbar.right.php' ?>
                 <!-- / navbar right -->
             </div>
         </div>
@@ -70,14 +55,14 @@
                     foreach ($data['esercizi'] as $esercizio) {
                         $imgs = IMG . '/esercizi/' . $esercizio->cat_nome . '/' . $esercizio->nome . '/' . str_replace('_', '-', $esercizio->nome) . '.gif';
                         $html = <<<HTML
-                        <div class="col">
+                        <div class="col-4">
                         <div class="box">
                             <div class="box-header">
                                 <h3>$esercizio->nome</h3>
                                 <small>$esercizio->cat_nome</small>
                             </div>
                             <div class="box-tool">
-                                <ul class="nav">
+                                <!--<ul class="nav">
                                     <li class="nav-item inline dropdown">
                                         <a class="nav-link" data-toggle="dropdown">
                                             <i class="material-icons md-18">&#xe5d4;</i>
@@ -89,7 +74,7 @@
 
                                         </div>
                                     </li>
-                                </ul>
+                                </ul>-->
                             </div>
                             <div class="box-body">
                                 <div class="row">
