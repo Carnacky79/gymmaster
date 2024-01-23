@@ -6,7 +6,7 @@
             <a class="navbar-brand">
                 <!--<div ui-include="'<?= ASSETS ?>/images/logo_gym.svg'"></div>-->
                 <img src="<?= ASSETS ?>/images/logo_gym.jpg" alt="logo"
-                     style="max-height: 70px">
+                     style="max-height: 70px; border: 2px solid black">
                 <!--<span class="hidden-folded inline">Gym Master</span>-->
             </a>
             <!-- / brand -->

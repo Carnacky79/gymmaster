@@ -53,7 +53,7 @@
                     <h5 class="mb-0 _300">Ciao <?= $_SESSION['user']->nome ?></h5>
                 </div>
                 <div class="row">
-                    <div class="col-sm-12 col-md-5 col-lg-4">
+                    <div class="col-sm-12 col-md-8 col-lg-6">
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="box p-a">
@@ -101,7 +101,7 @@
                                     </div>
                                 </div>
                             </div>-->
-                            <div class="col-sm-12">
+                            <!--<div class="col-sm-12">
                                 <div class="row no-gutter box-color text-center primary">
                                     <div class="col-sm-6 p-a">
                                         Followers
@@ -112,15 +112,15 @@
                                         <h4 class="m-0 text-md _600"><a href>7250</a></h4>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-7 col-lg-8">
+                    <div class="col-sm-12 col-md-4 col-lg-6">
                         <div class="row no-gutter box dark bg">
                             <div class="col-sm-8">
                                 <div class="box-header">
-                                    <h3>Activities</h3>
-                                    <small>Your last activity is posted 4 hours ago</small>
+                                    <h3>Grafico Settimanale</h3>
+                                    <small>Numero iscritti nella ultima settimana</small>
                                 </div>
                                 <div class="box-body">
                                     <div ui-jp="plot" ui-refresh="app.setting.color" ui-options="
@@ -149,7 +149,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-4 dker">
+                            <!--<div class="col-sm-4 dker">
                                 <div class="box-header">
                                     <h3>Reports</h3>
                                 </div>
@@ -158,7 +158,7 @@
                                         sollicitudin venenatis</p>
                                     <a href class="btn btn-sm btn-outline rounded b-success">Read More</a>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
