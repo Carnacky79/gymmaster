@@ -56,11 +56,11 @@
                                     <span class="nav-text">Aggiungi Utente</span>
                                 </a>
                             </li>
-                            <li>
+                            <!--<li>
                                 <a href="<?= ROOT ?>/admin/deluser">
                                     <span class="nav-text">Elimina Utente</span>
                                 </a>
-                            </li>
+                            </li>-->
                         </ul>
                     </li>
 
@@ -82,11 +82,11 @@
                                     <span class="nav-text">Lista Esercizi</span>
                                 </a>
                             </li>
-                            <li>
+                            <!--<li>
                                 <a href="<?= ROOT ?>/admin/addesercizio">
                                     <span class="nav-text">Aggiungi Esercizio</span>
                                 </a>
-                            </li>
+                            </li>-->
                         </ul>
                     </li>
                 </ul>

@@ -79,7 +79,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+                            <!--<div class="col-sm-6">
                                 <div class="box p-a">
                                     <div class="pull-left m-r">
                                         <i class="fa-solid fa-calendar-days text-2x text-accent m-y-sm"></i>
@@ -100,7 +100,7 @@
                                         <h4 class="m-0 text-md _600"><a href>750</a></h4>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
                             <div class="col-sm-12">
                                 <div class="row no-gutter box-color text-center primary">
                                     <div class="col-sm-6 p-a">

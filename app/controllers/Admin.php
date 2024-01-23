@@ -145,4 +145,11 @@ class Admin
 
         $this->view('dettaglioscheda', ['iscritto' => $iscritto, 'scheda' => $scheda[0], 'esercizi' => $esercizi]);
     }
+
+    public function deleteuser()
+    {
+        $iscritto = new Iscritto();
+        $iscritto->delete($_POST['id_iscritto']);
+        $this->redirect('admin/users');
+    }
 }

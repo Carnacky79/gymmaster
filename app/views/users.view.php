@@ -56,6 +56,7 @@
                     foreach ($data['iscritti'] as $iscritto) {
                         $creaScheda = ROOT . '/admin/creaScheda?id=' . $iscritto->id;
                         $nuovaScheda = ROOT . "/admin/nuovascheda";
+                        $delUtente = ROOT . "/admin/deleteuser";
                         $iscrittoID = $iscritto->id;
                         //$imgs = IMG . '/esercizi/' . $esercizio->cat_nome . '/' . $esercizio->nome . '/' . str_replace('_', '-', $esercizio->nome) . '.gif';
                         $html = <<<HTML
@@ -77,14 +78,21 @@
                                             <div class="dropdown-divider"></div>
                                             
                                             <form action="$nuovaScheda" method="post">
-                                            <input type="hidden" name="id_iscritto"
-                                                   value="$iscrittoID">
-                                            <button type="submit"
-                                                    class="btn btn-outline b-primary text-primary rounded-pill btn-sm">Crea
-                                                nuova Scheda
-                                            </button>
-                                        </form>
-
+                                                <input type="hidden" name="id_iscritto"
+                                                       value="$iscrittoID">
+                                                <button type="submit"
+                                                        class="btn btn-outline b-primary text-primary rounded-pill btn-sm">Crea
+                                                    nuova Scheda
+                                                </button>
+                                            </form>
+                                            <div class="dropdown-divider"></div>
+                                            <form action="$delUtente" method="post">
+                                                <input type="hidden" name="id_iscritto"
+                                                       value="$iscrittoID">
+                                                <button type="submit"
+                                                        class="btn btn-outline b-danger text-primary rounded-pill btn-sm">Elimina Utente
+                                                </button>
+                                            </form>
                                         </div>
                                     </li>
                                 </ul>
