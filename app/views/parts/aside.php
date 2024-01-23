@@ -1,12 +1,13 @@
 <!-- aside -->
 <div id="aside" class="app-aside modal fade folded md nav-expand">
     <div class="left navside indigo-900 dk" layout="column">
-        <div class="navbar navbar-md no-radius">
+        <div class="navbar navbar-md no-radius text-center">
             <!-- brand -->
             <a class="navbar-brand">
                 <!--<div ui-include="'<?= ASSETS ?>/images/logo_gym.svg'"></div>-->
-                <img src="<?= ASSETS ?>/images/logo_gym.png" alt="logo" class="h-2x">
-                <span class="hidden-folded inline">Gym Master</span>
+                <img src="<?= ASSETS ?>/images/logo_gym.jpg" alt="logo"
+                     style="max-height: 70px">
+                <!--<span class="hidden-folded inline">Gym Master</span>-->
             </a>
             <!-- / brand -->
         </div>
@@ -14,9 +15,9 @@
             <nav class="scroll nav-active-primary">
 
                 <ul class="nav" ui-nav>
-                    <li class="nav-header hidden-folded">
+                    <!--<li class="nav-header hidden-folded">
                         <small class="text-muted">Main</small>
-                    </li>
+                    </li>-->
 
                     <li>
                         <a href="<?= ROOT ?>">
