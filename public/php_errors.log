@@ -682,3 +682,15 @@ Stack trace:
 #4 C:\Users\Admin\PhpstormProjects\gym\public\index.php(10): App->loadController()
 #5 {main}
   thrown in C:\Users\Admin\PhpstormProjects\gym\app\core\Database.php on line 12
+[28-Jan-2024 23:35:30 UTC] PHP Warning:  Undefined array key "email" in C:\Users\Admin\PhpstormProjects\gym\app\controllers\Login.php on line 11
+[28-Jan-2024 23:35:30 UTC] PHP Warning:  Undefined array key "password" in C:\Users\Admin\PhpstormProjects\gym\app\controllers\Login.php on line 12
+[28-Jan-2024 23:35:30 UTC] PHP Warning:  Undefined array key "admin" in C:\Users\Admin\PhpstormProjects\gym\app\controllers\Login.php on line 15
+[28-Jan-2024 23:39:10 UTC] PHP Warning:  Undefined array key "email" in C:\Users\Admin\PhpstormProjects\gym\app\controllers\Login.php on line 11
+[28-Jan-2024 23:39:10 UTC] PHP Warning:  Undefined array key "password" in C:\Users\Admin\PhpstormProjects\gym\app\controllers\Login.php on line 12
+[28-Jan-2024 23:39:10 UTC] PHP Warning:  Undefined array key "admin" in C:\Users\Admin\PhpstormProjects\gym\app\controllers\Login.php on line 15
+[28-Jan-2024 23:41:53 UTC] PHP Warning:  Undefined array key "email" in C:\Users\Admin\PhpstormProjects\gym\app\controllers\Login.php on line 11
+[28-Jan-2024 23:41:53 UTC] PHP Warning:  Undefined array key "password" in C:\Users\Admin\PhpstormProjects\gym\app\controllers\Login.php on line 12
+[28-Jan-2024 23:41:53 UTC] PHP Warning:  Undefined array key "admin" in C:\Users\Admin\PhpstormProjects\gym\app\controllers\Login.php on line 15
+[28-Jan-2024 23:42:05 UTC] PHP Warning:  Undefined array key "email" in C:\Users\Admin\PhpstormProjects\gym\app\controllers\Login.php on line 11
+[28-Jan-2024 23:42:05 UTC] PHP Warning:  Undefined array key "password" in C:\Users\Admin\PhpstormProjects\gym\app\controllers\Login.php on line 12
+[28-Jan-2024 23:42:05 UTC] PHP Warning:  Undefined array key "admin" in C:\Users\Admin\PhpstormProjects\gym\app\controllers\Login.php on line 15

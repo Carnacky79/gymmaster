@@ -45,15 +45,7 @@
                         <input type="password" class="md-input" name="password" required>
                         <label>Password</label>
                     </div>
-                    <!--<div class="m-b-md">
-                        <label class="md-check">
-                            <input type="radio" name="admin" value="1"><i class="primary"></i> Entra come Admin
-                        </label>
-
-                        <label class="md-check">
-                            <input type="radio" name="admin" value="2"><i class="primary"></i> Entra come Utente
-                        </label>
-                    </div>-->
+                    <input type="hidden" name="admin" value="1">
                     <button type="submit" class="btn primary btn-block p-x-md">Entra</button>
                 </form>
             </div>
@@ -80,15 +72,9 @@
                         <input type="password" class="md-input" name="password" required>
                         <label>Password</label>
                     </div>
-                    <!--<div class="m-b-md">
-                        <label class="md-check">
-                            <input type="radio" name="admin" value="1"><i class="primary"></i> Entra come Admin
-                        </label>
 
-                        <label class="md-check">
-                            <input type="radio" name="admin" value="2"><i class="primary"></i> Entra come Utente
-                        </label>
-                    </div>-->
+                            <input type="hidden" name="admin" value="0">
+
                     <button type="submit" class="btn primary btn-block p-x-md">Entra</button>
                 </form>
             </div>

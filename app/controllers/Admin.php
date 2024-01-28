@@ -46,6 +46,7 @@ class Admin
             'data_nascita' => $_POST['data_nascita'],
             'telefono' => $_POST['telefono'],
             'id_palestra' => $_SESSION['user']->id,
+            'password' => $_POST['password'],
         ];
         $iscritto->insert($data);
         $this->redirect('admin/users');

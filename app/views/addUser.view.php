@@ -102,6 +102,11 @@
                                             <input type="text" class="form-control" id="telefono" name="telefono"
                                                    placeholder="Telefono">
                                         </div>
+                                        <div class="col-4">
+                                            <label for="password">Password: </label>
+                                            <input type="text" class="form-control" id="password" name="password"
+                                                   placeholder="Password">
+                                        </div>
 
                                     </div>
                                     <div class="row mt-5">
