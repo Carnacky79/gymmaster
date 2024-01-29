@@ -11,13 +11,13 @@ if ($_SERVER['SERVER_NAME'] == 'localhost') {
     define('ROOT', 'http://localhost/gym/public');
 } else {
     /** Database configuration */
-    define('DBNAME', 'test');
-    define('DBHOST', 'localhost');
-    define('DBUSER', 'root');
-    define('DBPASS', 'password');
+    define('DBNAME', 'gymstudi62940');
+    define('DBHOST', 'sql.gymstudio-manager.it');
+    define('DBUSER', 'gymstudi62940');
+    define('DBPASS', 'gyms78706');
     define('DBDRIVER', '');
 
-    define('ROOT', 'http://localhost/MVC/public');
+    define('ROOT', 'http://www.gymstudio-manager.it/public');
 }
 
 define('ASSETS', ROOT . '/assets');

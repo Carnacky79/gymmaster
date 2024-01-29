@@ -35,4 +35,5 @@
         }
     </style>
     <script src="https://kit.fontawesome.com/2dcf18d0c3.js" crossorigin="anonymous"></script>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 </head>

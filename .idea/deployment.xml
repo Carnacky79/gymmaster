@@ -9,6 +9,13 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="gymstudio">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/htdocs" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="lanuovaimpianti">
         <serverdata>
           <mappings>

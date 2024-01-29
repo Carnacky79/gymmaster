@@ -63,7 +63,7 @@
                                     <div class="clear">
                                         <div class="text-muted">Utenti</div>
                                         <h4 class="m-0 text-md _600"><a
-                                                    href=""><?php echo count($data['iscritti']); ?></a>
+                                                    href=""><?php echo $data['iscritti'] == 0 ? $data['iscritti'] : count($data['iscritti']); ?></a>
                                         </h4>
                                     </div>
                                 </div>

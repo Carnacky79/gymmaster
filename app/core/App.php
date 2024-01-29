@@ -5,7 +5,7 @@ class App
     private $controller = 'home';
     private $method = 'index';
 
-    private function splitURL(): array
+    private function splitURL()
     {
         $URL = $_GET['url'] ?? 'home';
         $URL = filter_var($URL, FILTER_SANITIZE_URL);

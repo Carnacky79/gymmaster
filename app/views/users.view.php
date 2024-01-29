@@ -52,14 +52,17 @@
                 <div class="row">
                     <?php //count($data['iscritti']); ?>
                     <?php
-                    $count = 1;
-                    foreach ($data['iscritti'] as $iscritto) {
-                        $creaScheda = ROOT . '/admin/creaScheda?id=' . $iscritto->id;
-                        $nuovaScheda = ROOT . "/admin/nuovascheda";
-                        $delUtente = ROOT . "/admin/deleteuser";
-                        $iscrittoID = $iscritto->id;
-                        //$imgs = IMG . '/esercizi/' . $esercizio->cat_nome . '/' . $esercizio->nome . '/' . str_replace('_', '-', $esercizio->nome) . '.gif';
-                        $html = <<<HTML
+                    if($data['iscritti'] == 0){
+                        echo '<h3 class="text-center">Non ci sono iscritti</h3>';
+                    }else {
+                        $count = 1;
+                        foreach ($data['iscritti'] as $iscritto) {
+                            $creaScheda = ROOT . '/admin/creaScheda?id=' . $iscritto->id;
+                            $nuovaScheda = ROOT . "/admin/nuovascheda";
+                            $delUtente = ROOT . "/admin/deleteuser";
+                            $iscrittoID = $iscritto->id;
+                            //$imgs = IMG . '/esercizi/' . $esercizio->cat_nome . '/' . $esercizio->nome . '/' . str_replace('_', '-', $esercizio->nome) . '.gif';
+                            $html = <<<HTML
                         <div class="col-4">
                         <div class="box">
                             <div class="box-header">
@@ -111,11 +114,12 @@
                         </div>
                         </div>
 HTML;
-                        echo $html;
-                        if ($count % 3 == 0) {
-                            echo '</div><div class="row">';
+                            echo $html;
+                            if ($count % 3 == 0) {
+                                echo '</div><div class="row">';
+                            }
+                            $count++;
                         }
-                        $count++;
                     }
                     ?>
 
