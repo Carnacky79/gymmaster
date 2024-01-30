@@ -1,8 +1,15 @@
+<?php
+if ($_SERVER['HTTP_REFERER'] != 'https://www.gymstudio-manager.it/') {
+    if (!isset($_SERVER['user']) && $_SERVER['HTTP_REFERER'] != 'https://www.gymstudio-manager.it/public/') {
+        header("Location: https://www.gymstudio-manager.it");
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>Flatkit - HTML Version | Bootstrap 4 Web App Kit with AngularJS</title>
+    <title>Gym Studio Manager</title>
     <meta name="description" content="Admin, Dashboard, Bootstrap, Bootstrap 4, Angular, AngularJS"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,3 +44,6 @@
     <script src="https://kit.fontawesome.com/2dcf18d0c3.js" crossorigin="anonymous"></script>
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 </head>
+<?php
+echo $_SERVER['HTTP_REFERER'] != 'https://www.gymstudio-manager.it/';
+?>

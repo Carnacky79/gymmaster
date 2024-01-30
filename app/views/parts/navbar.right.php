@@ -2,7 +2,7 @@
     <li class="nav-item dropdown">
         <a class="nav-link p-0 clear" href="#" data-toggle="dropdown">
                   <span class="avatar w-40">
-                    <img src="<?= ASSETS ?>/images/gym_user.png" alt="...">
+                    <img src="<?= ASSETS ?>/images/logo_gym.jpg" alt="...">
                     <i class="on b-white bottom"></i>
                   </span>
         </a>
