@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['HTTP_REFERER'] != 'https://www.gymstudio-manager.it/') {
-    if (!isset($_SERVER['user']) && $_SERVER['HTTP_REFERER'] != 'https://www.gymstudio-manager.it/public/') {
+    if (!isset($_SERVER['user']) && substr($_SERVER['HTTP_REFERER'], 0, 39) != 'https://www.gymstudio-manager.it/public') {
         header("Location: https://www.gymstudio-manager.it");
     }
 }

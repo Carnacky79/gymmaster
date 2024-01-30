@@ -6,6 +6,12 @@ trait Session
     {
         $_SESSION['user'] = $user;
         $_SESSION['logged'] = true;
+        $log = new Log();
+        $data = [
+            'utente' => $user->id,
+            'data' => date('Y-m-d H:i:s'),
+        ];
+        $log->insert($data);
     }
 
     public function isLogged()
