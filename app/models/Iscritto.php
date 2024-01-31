@@ -23,6 +23,10 @@ class Iscritto
         $queryScheda .= " where id_utente = :id_utente AND attiva = 1";
 
         $idScheda = $this->query($queryScheda,['id_utente' => $id])[0]->id;
-        $queryEsercizi =
+        $queryEsercizi = "SELECT esercizi.nome, esercizi_scheda.rep, esercizi_scheda.serie, esercizi_scheda.recupero, esercizi_scheda.carico ";
+        $queryEsercizi .= " FROM esercizi join esercizi_scheda on esercizi.id = esercizi_scheda.id_esercizio where esercizi_scheda.id_scheda = :id_scheda";
+
+        $esercizi = $this->query($queryEsercizi,['id_scheda' => $idScheda]);
+        return $esercizi;
     }
 }

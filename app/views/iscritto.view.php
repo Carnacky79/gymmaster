@@ -8,20 +8,22 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body>
+<body style="background-color: darkorange">
 
 <div class="container mt-4">
-    <h1 class="text-center">Scheda Allenamento</h1>
+    <h1 class="text-center" style="color: ghostwhite">Scheda Allenamento</h1>
     <?php
-    var_dump($data['esercizi']);
+    //var_dump($data['esercizi']);
     ?>
 
     <!-- Aggiungi il nome dell'iscritto -->
     <div class="row mt-3">
         <div class="col-md-6 offset-md-3">
-            <div class="card">
+            <div class="card" style="border: 2px solid black">
                 <div class="card-body">
                     <h3 class="card-title text-center">Ciao <?= $_SESSION['user']->nome ?></h3>
+                    <h5 class="text-center"><a class="btn btn-sm btn-outline-warning" href="<?= ROOT ?>/login/logout">Esci</a>
+                    </h5>
                     <!-- Inserisci il nome dell'iscritto qui -->
                 </div>
             </div>
@@ -31,14 +33,17 @@
     <!-- Elenco degli esercizi -->
     <div class="row mt-4">
         <div class="col-md-6 offset-md-3">
-            <div class="card">
+            <div class="card" style="border: 2px solid black">
                 <div class="card-body">
                     <h4 class="card-title text-center">Esercizi da Svolgere</h4>
                     <!-- Aggiungi la lista degli esercizi qui -->
                     <ul class="list-group">
-                        <li class="list-group-item">Esercizio 1</li>
-                        <li class="list-group-item">Esercizio 2</li>
-                        <li class="list-group-item">Esercizio 3</li>
+                        <?php
+                        foreach ($data['esercizi'] as $e) {
+                            $nomeEsercizio = ucwords(str_replace('_', ' ', $e->nome));
+                            echo "<li class='list-group-item'><span style='font-weight: bolder'> $nomeEsercizio - $e->serie X $e->rep</span> ($e->carico Kg) <br>Recupero: $e->recupero sec.</li>";
+                        }
+                        ?>
                         <!-- Aggiungi altri esercizi se necessario -->
                     </ul>
                 </div>
