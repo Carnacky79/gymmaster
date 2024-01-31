@@ -63,7 +63,7 @@
                             $iscrittoID = $iscritto->id;
                             //$imgs = IMG . '/esercizi/' . $esercizio->cat_nome . '/' . $esercizio->nome . '/' . str_replace('_', '-', $esercizio->nome) . '.gif';
                             $html = <<<HTML
-                        <div class="col-4">
+                        <div class="col-sm-4 col-12">
                         <div class="box">
                             <div class="box-header">
                                 <h3>$iscritto->nome $iscritto->cognome</h3>
