@@ -5,8 +5,8 @@ class Utente
     use Controller;
     use Session;
     public function index(){
-        $this->getLoggedUser()[0];
-        $esercizi = $iscritto->getEsercizi($iscritto->id)
-        $this->view('iscritto');
+        $iscritto = new Iscritto();
+        $esercizi = $iscritto->getEsercizi($_SESSION['user']->id);
+        $this->view('iscritto', ['esercizi' => $esercizi]);
     }
 }

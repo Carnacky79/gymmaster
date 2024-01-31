@@ -12,6 +12,9 @@
 
 <div class="container mt-4">
     <h1 class="text-center">Scheda Allenamento</h1>
+    <?php
+    var_dump($data['esercizi']);
+    ?>
 
     <!-- Aggiungi il nome dell'iscritto -->
     <div class="row mt-3">

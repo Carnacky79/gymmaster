@@ -37,6 +37,11 @@ trait Database
         }
         return false;
     }
+
+    public function getConnection(){
+        return $this->connect();
+    }
+
 }
 
 

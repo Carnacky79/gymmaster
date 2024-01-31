@@ -8,3 +8,8 @@
     function esc($str){
         return htmlspecialchars($str);
     }
+
+    function castToIscritto($myClass): Iscritto
+    {
+        return $myClass;
+    }
