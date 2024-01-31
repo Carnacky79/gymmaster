@@ -14,12 +14,11 @@ class Login
 
         $type = $_REQUEST['admin'] == 1 ? 'admin' : 'iscritto';
 
-        if($type == 'admin') {
+        if ($type == 'admin') {
             $this->loginAdmin($data);
         } else {
             $this->loginIscritto($data);
         }
-
 
 
     }
@@ -29,7 +28,7 @@ class Login
         $user = new User();
         $loggedUser = $user->first($data);
         if ($loggedUser) {
-            $this->saveUser($loggedUser);
+            $this->saveUser($loggedUser, 'admin');
             $this->redirect('admin');
         } else {
             $this->view('home');
@@ -41,8 +40,8 @@ class Login
         $iscritto = new Iscritto();
         $loggedUser = $iscritto->first($data);
         if ($loggedUser) {
-            $this->saveUser($loggedUser);
-            $this->redirect('iscritto');
+            $this->saveUser($loggedUser, 'iscritto');
+            $this->redirect('utente');
         } else {
             $this->view('home');
         }

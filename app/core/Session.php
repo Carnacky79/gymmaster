@@ -2,10 +2,11 @@
 
 trait Session
 {
-    public function saveUser(stdClass $user)
+    public function saveUser(stdClass $user, string $role)
     {
         $_SESSION['user'] = $user;
         $_SESSION['logged'] = true;
+        $_SESSION['ruolo'] = $role;
         $log = new Log();
         $data = [
             'utente' => $user->id,
@@ -24,4 +25,12 @@ trait Session
         session_destroy();
     }
 
+    public function getLoggedUser()
+    {
+        $logged = [
+            $_SESSION['user'],
+            $_SESSION['ruolo']
+        ];
+        return $logged;
+    }
 }

@@ -8,8 +8,19 @@ class Home
     public function index()
     {
         if ($this->isLogged()) {
-            $this->redirect('admin');
+            if ($this->isAdmin())
+                $this->redirect('admin');
+            else
+                $this->redirect('iscritto');
         }
         $this->view('home');
+    }
+
+    private function isAdmin()
+    {
+        if ($this->getLoggedUser()[1] == 'admin')
+            return true;
+        else
+            return false;
     }
 }

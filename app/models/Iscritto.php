@@ -15,4 +15,9 @@ class Iscritto
         $query .= "where utenti.id_palestra = :id_palestra";
         return $this->query($query, ['id_palestra' => $_SESSION['user']->id]);
     }
+
+    public function getEsercizi($utente)
+    {
+        $queryScheda = "select schede.id";
+    }
 }
