@@ -1,0 +1,19 @@
+ALTER TABLE `esercizi_scheda`
+  DROP `rep`,
+  DROP `serie`,
+  DROP `recupero`,
+  DROP `durata`,
+  DROP `carico`;
+
+ALTER TABLE `esercizi_scheda` ADD `note` TEXT NULL AFTER `id_esercizio`;
+
+INSERT INTO `categorieesercizi` (`id`, `nome`) VALUES
+(1, 'addominali'),
+(2, 'bicipiti'),
+(3, 'cardio'),
+(4, 'dorsali'),
+(5, 'gambe'),
+(6, 'pettorali'),
+(7, 'spalle'),
+(8, 'tricipiti');
+
