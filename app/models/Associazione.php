@@ -26,5 +26,10 @@ FROM
         return $this->query($query);
     }
 
+    public function isAssociated($idEsercizio)
+    {
+        return $this->first(['id_esercizio' => $idEsercizio]);
+    }
+
 
 }

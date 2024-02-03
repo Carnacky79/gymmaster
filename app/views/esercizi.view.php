@@ -48,6 +48,11 @@
             <div class="padding">
                 <div class="margin">
                     <h5 class="mb-0 _300">Ciao <?= $_SESSION['user']->nome ?></h5>
+                    <?php
+                    if (isset($data['messaggi']['info'])) {
+                        echo "<h6 class='messaggioeliminazione' style='color: red; font-weight: bolder'>{$data['messaggi']['info']}</h6>";
+                    }
+                    ?>
                 </div>
                 <div class="row">
                     <?php
@@ -87,14 +92,23 @@ HTML;
 
                                             foreach ($data['esercizi'] as $esercizio) {
                                                 $es = IMG . '/scheda/' . $catnome . '/' . $esercizio->nome;
+                                                $del_link = ROOT . '/admin/delesercizio?cat=' . $catnome . '&esercizio=' . $esercizio->id;
                                                 if ($esercizio->id_categoria == $id_cat) {
 
                                                     echo <<<HTML
                                                 
                                                 
 
-                                                    <div class="col-sm-6 col-md-4">
-                                                        <img class="img-fluid" style="height: width:100%" src="$es" />
+                                                    <div class="col-sm-6 col-md-4" style="border: 1px dotted black; padding-top: 3px;padding-bottom:2px;">
+                                                    <div class="row">
+                                                        <div class="col-sm-4" style="padding-top:3px">
+                                                            <a class="btn btn-danger btn-sm eliminaesercizio" href="$del_link" onclick="return confirm('Sicuro?');">Elimina</a>
+                                                        </div>
+                                                        <div class="col-sm-8">
+                                                            <img class="img-fluid" style="height: width:100%" src="$es" />
+                                                        </div>
+                                                    </div>
+                                                        
                                                     </div>
 
                                                 

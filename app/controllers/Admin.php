@@ -26,11 +26,11 @@ class Admin
         $this->view('users', ['iscritti' => $iscritti]);
     }
 
-    public function esercizi()
+    public function esercizi($msg = [])
     {
         $esercizio = new Esercizio();
         $esercizi = $esercizio->esercizi_categorie();
-        $this->view('esercizi', ['esercizi' => $esercizi]);
+        $this->view('esercizi', ['esercizi' => $esercizi, 'messaggi' => $msg]);
     }
 
     public function addUser()
@@ -280,5 +280,25 @@ HTML;
         //basename($_FILES["immagine_esercizio"]["name"])
         $esercizio->insert($data);
         $this->view('addesercizio', ['messaggio' => $msg, 'categorie' => $categorie]);
+    }
+
+    public function delesercizio()
+    {
+        $assoc = new Associazione();
+        $esercizio = new Esercizio();
+        $id_es = $_GET['esercizio'];
+        $nome_es = $esercizio->first(['id' => $id_es])->nome;
+
+        $dir = IMG . '/scheda/';
+        $path = parse_url($dir, PHP_URL_PATH);
+        $path = $_SERVER['DOCUMENT_ROOT'] . $path;
+
+        $target = $path . $_GET['cat'] . '/' . $nome_es;
+
+        if (!$assoc->isAssociated($id_es)) {
+            $esercizio->delete($id_es);
+            unlink($target);
+        }
+        $this->esercizi(['info' => 'Esercizio eliminato correttamente!']);
     }
 }

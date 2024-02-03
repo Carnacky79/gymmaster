@@ -32,7 +32,7 @@ trait Model
         }
 
         $query = trim($query, " AND ");
-        $query .= " order by $this->order_column $this->order_type";
+        //$query .= " order by $this->order_column $this->order_type";
 
         if ($one) {
             $query .= " limit 1";
