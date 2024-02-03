@@ -12,7 +12,7 @@ trait Session
             'utente' => $user->id,
             'data' => date('Y-m-d H:i:s'),
         ];
-        //$log->insert($data);
+        $log->insert($data);
     }
 
     public function isLogged()

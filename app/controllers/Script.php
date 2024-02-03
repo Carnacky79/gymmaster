@@ -14,7 +14,8 @@ class Script
             'gambe' => 5,
             'pettorali' => 6,
             'spalle' => 7,
-            'tricipiti' => 8
+            'tricipiti' => 8,
+            'attrezzi' => 9
         ];
         $dir = IMG . '/scheda/';
         $path = parse_url($dir, PHP_URL_PATH);
@@ -30,14 +31,14 @@ class Script
             return;
         //echo '<ol>';
 
-        $categorie= [];
+        $categorie = [];
         //echo "<ul>";
         foreach ($ffs as $ff) {
             //$categorie[] = $ff;
 
-            if (is_dir($path .'/'.  $ff)) {
+            if (is_dir($path . '/' . $ff)) {
                 //echo "<li>$ff";
-                $subs = scandir($path .'/'.  $ff);
+                $subs = scandir($path . '/' . $ff);
 
                 unset($subs[array_search('.', $subs, true)]);
                 unset($subs[array_search('..', $subs, true)]);
@@ -55,17 +56,18 @@ class Script
 
         $esercizio = new Esercizio();
         //print_r($categorie);
-        foreach ($categorie as $c => $v){
+        foreach ($categorie as $c => $v) {
             //echo "$c<br />";
-                foreach ($v as $sub){
-                    //echo " - $sub<br />";
-                    $data = [
-                        'id_categoria' => $associazione[$c],
-                        'nome' => $sub,
-                    ];
+            foreach ($v as $sub) {
+                //echo " - $sub<br />";
+                $data = [
+                    'id_categoria' => $associazione[$c],
+                    'nome' => $sub,
+                ];
+                if ($associazione[$c] == 9)
                     $esercizio->insert($data);
-                }
-                //echo "<hr>";
+            }
+            //echo "<hr>";
         }
 
     }

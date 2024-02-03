@@ -51,60 +51,139 @@
                 </div>
                 <div class="row">
                     <?php
-                    $count = 1;
-                    foreach ($data['esercizi'] as $esercizio) {
-                        //$imgs = IMG . '/esercizi/' . $esercizio->cat_nome . '/' . $esercizio->nome . '/' . str_replace('_', '-', $esercizio->nome) . '.gif';
-                        $imgs = IMG . '/scheda/' . $esercizio->cat_nome . '/' . $esercizio->nome;
-                        $html = <<<HTML
-                        <div class="col-4">
+                    $associazione = [
+                        'addominali' => 1,
+                        'bicipiti' => 2,
+                        'cardio' => 3,
+                        'dorsali' => 4,
+                        'gambe' => 5,
+                        'pettorali' => 6,
+                        'spalle' => 7,
+                        'tricipiti' => 8,
+                        'attrezzi' => 9
+                    ];
+                    ?>
+                    <div class="col">
                         <div class="box">
-                            <div class="box-header">
-                                <h3>$esercizio->nome</h3>
-                                <!--<small>$esercizio->cat_nome</small>-->
-                            </div>
-                            <div class="box-tool">
-                                <!--<ul class="nav">
-                                    <li class="nav-item inline dropdown">
-                                        <a class="nav-link" data-toggle="dropdown">
-                                            <i class="material-icons md-18">&#xe5d4;</i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-scale pull-right">
-                                            <a class="dropdown-item" href>Assegna esercizio</a>
-
-                                            <div class="dropdown-divider"></div>
-
-                                        </div>
-                                    </li>
-                                </ul>-->
-                            </div>
                             <div class="box-body">
                                 <div class="row">
-                                    <div class="col-4">
-                                    <img class="img-responsive" src='$imgs' alt='$esercizio->nome' style="width: 100%" />
-                                    </div>
-                                    <div class="col-8">
-                                    
+                                    <div class="col">
+                                        <?php
+                                        foreach ($associazione as $catnome => $id_cat) {
+                                            echo <<<HTML
+                                                    <div id="accordion">
+                                                      <div class="card">
+                                                        <div class="card-header" id="heading$catnome">
+                                                          <h5 class="mb-0">
+                                                            <button class="btn btn-link collapsed" aria-expanded="false" data-toggle="collapse" data-target="#collapse$catnome" aria-controls="collapse$catnome">
+                                                              $catnome
+                                                            </button>
+                                                          </h5>
+                                                        </div>
+                                                        <div id="collapse$catnome" class="collapse" aria-labelledby="heading$catnome" data-parent="#accordion">
+                                                          <div class="card-body pt-3">
+<div class="row mt-2" style="border-bottom: 1px solid orangered">
+HTML;
+
+                                            foreach ($data['esercizi'] as $esercizio) {
+                                                $es = IMG . '/scheda/' . $catnome . '/' . $esercizio->nome;
+                                                if ($esercizio->id_categoria == $id_cat) {
+
+                                                    echo <<<HTML
+                                                
+                                                
+
+                                                    <div class="col-sm-6 col-md-4">
+                                                        <img class="img-fluid" style="height: width:100%" src="$es" />
+                                                    </div>
+
+                                                
+    HTML;
+                                                }
+
+                                            }
+                                            echo <<<HTML
+                                                </div>
+                                                </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+HTML;
+
+                                        }
+
+                                        ?>
                                     </div>
                                 </div>
-                            
                             </div>
                         </div>
-                        </div>
-HTML;
-                        echo $html;
-                        if ($count % 3 == 0) {
-                            echo '</div><div class="row">';
-                        }
-                        $count++;
-                    }
-                    ?>
+                        <?php
+                        /*$associazione = [
+                            'addominali' => 1,
+                            'bicipiti' => 2,
+                            'cardio' => 3,
+                            'dorsali' => 4,
+                            'gambe' => 5,
+                            'pettorali' => 6,
+                            'spalle' => 7,
+                            'tricipiti' => 8
+                        ];
+                        $count = 1;
+                        foreach ($data['esercizi'] as $esercizio) {
+                            //$imgs = IMG . '/esercizi/' . $esercizio->cat_nome . '/' . $esercizio->nome . '/' . str_replace('_', '-', $esercizio->nome) . '.gif';
+                            $imgs = IMG . '/scheda/' . $esercizio->cat_nome . '/' . $esercizio->nome;
+                            $html = <<<HTML
+                            <div class="col">
+                            <div class="box">
+                                <div class="box-header">
+                                    <h3>$esercizio->nome</h3>
+                                    <!--<small>$esercizio->cat_nome</small>-->
+                                </div>
+                                <div class="box-tool">
+                                    <!--<ul class="nav">
+                                        <li class="nav-item inline dropdown">
+                                            <a class="nav-link" data-toggle="dropdown">
+                                                <i class="material-icons md-18">&#xe5d4;</i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-scale pull-right">
+                                                <a class="dropdown-item" href>Assegna esercizio</a>
+
+                                                <div class="dropdown-divider"></div>
+
+                                            </div>
+                                        </li>
+                                    </ul>-->
+                                </div>
+                                <div class="box-body">
+                                    <div class="row">
+                                        <div class="col-4">
+                                        <img class="img-responsive" src='$imgs' alt='$esercizio->nome' style="width: 100%" />
+                                        </div>
+                                        <div class="col-8">
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            </div>
+    HTML;
+                            echo $html;
+                            if ($count % 3 == 0) {
+                                echo '</div><div class="row">';
+                            }
+                            $count++;
+                        }*/
+                        ?>
 
 
+                    </div>
                 </div>
 
                 <!-- ############ PAGE END-->
 
             </div>
+
         </div>
         <!-- / -->
 

@@ -17,3 +17,12 @@ INSERT INTO `categorieesercizi` (`id`, `nome`) VALUES
 (7, 'spalle'),
 (8, 'tricipiti');
 
+CREATE TABLE IF NOT EXIST `log_accessi` (
+  `id` int(11) NOT NULL,
+  `utente` varchar(255) NOT NULL,
+  `data` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+ALTER TABLE `log_accessi`
+  ADD PRIMARY KEY (`id`);
+

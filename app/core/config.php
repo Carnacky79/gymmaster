@@ -17,7 +17,7 @@ if ($_SERVER['SERVER_NAME'] == 'localhost') {
     define('DBPASS', 'gyms78706');
     define('DBDRIVER', '');
 
-    //define('ROOT', 'https://www.gymstudio-manager.it/public');
+    define('ROOT', 'https://www.gymstudio-manager.it/public');
 }
 
 define('ASSETS', ROOT . '/assets');

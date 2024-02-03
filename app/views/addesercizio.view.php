@@ -43,66 +43,91 @@
             </div>
         </div>
         <div ui-view class="app-body" id="view">
-
+            <?php
+            //var_dump($data['categorie']);
+            ?>
             <!-- ############ PAGE START-->
             <div class="padding">
-    <div class="margin">
-        <h5 class="mb-0 _300">Aggiungi nuovo esercizio</h5>
-    </div>
-    <div class="row">
-        <div class="col">
-            <div class="box">
-                <div class="box-header">
-                    <h3>Dettagli dell'esercizio</h3>
+                <div class="margin">
+                    <h5 class="mb-0 _300">Aggiungi nuovo esercizio</h5>
                 </div>
-                <div class="box-body">
-                    <form action="<?= ROOT . '/admin/!!!!!!!' ?>" method="post">
-                        <div class="row mt-3">
-                            <div class="col-4">
-                                <label for="nome_esercizio">Nome dell'esercizio:</label>
-                                <input type="text" class="form-control" id="nome_esercizio" name="nome_esercizio" placeholder="Nome dell'esercizio" required>
+                <div class="row">
+                    <div class="col">
+                        <div class="box">
+                            <div class="box-header">
+                                <h3>Dettagli dell'esercizio</h3>
                             </div>
-                            <div class="col-4">
-                                <label for="categoria">Categoria:</label>
-                                <input type="text" class="form-control" id="categoria" name="categoria" placeholder="Categoria" required>
-                            </div>
-                            <div class="col-4">
-                                <label for="durata">Durata (minuti):</label>
-                                <input type="number" class="form-control" id="durata" name="durata" placeholder="Durata" required>
+                            <div class="box-body">
+                                <form action="<?= ROOT . '/admin/persistex' ?>" method="post"
+                                      enctype="multipart/form-data">
+                                    <div class="row mt-3">
+                                        <div class="col-8">
+                                            <label for="immagine_esercizio">Carica Immagine:</label>
+                                            <input type="file" accept="image/gi" class="form-control"
+                                                   id="immagine_esercizio"
+                                                   name="immagine_esercizio">
+                                        </div>
+                                        <div class="col-4">
+                                            <label for="categoria">Categoria:</label>
+                                            <select name="categoria" id="categoria" class="form-control">
+                                                <option selected value="-1">Selezione un'opzione</option>
+                                                <?php
+                                                foreach ($data['categorie'] as $cat) {
+                                                    echo "<option value=$cat->id>$cat->nome</option>";
+                                                }
+
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-5">
+                                        <div class="col-4">
+                                            <button type="submit" class="btn btn-primary">Aggiungi Esercizio</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                        <div class="row mt-2">
-                            <div class="col-4">
-                                <label for="carico">Carico:</label>
-                                <input type="text" class="form-control" id="carico" name="carico" placeholder="Carico" required>
-                            </div>
-                            <div class="col-4">
-                                <label for="ripetizioni">Ripetizioni:</label>
-                                <input type="number" class="form-control" id="ripetizioni" name="ripetizioni" placeholder="Ripetizioni" required>
-                            </div>
-                        </div>
-                        <div class="row mt-5">
-                            <div class="col-4">
-                                <button type="submit" class="btn btn-primary">Aggiungi Esercizio</button>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
+                <?php
+                if (isset($data['messaggio'])):
+                    ?>
+                    <div class="row">
+                        <div class="col">
+                            <div class="box">
+                                <div class="box-header">
+                                    <h3>Informazioni sul caricamento nuovo esercizio</h3>
+                                </div>
+                                <div class="box-body">
+                                    <div class="row mt-3">
+                                        <div class="col-8">
+                                            <?php
+                                            if (isset($data['messaggio']))
+                                                echo "<h2>{$data['messaggio']}</h2>";
+                                            ?>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                endif;
+                ?>
             </div>
+            <!-- ############ PAGE END-->
+
         </div>
     </div>
+    <!-- / -->
+
+    <!-- theme switcher -->
+    <?php require 'parts/switcher.php' ?>
+    <!-- / -->
+
+    <!-- ############ LAYOUT END-->
+
 </div>
-                <!-- ############ PAGE END-->
-
-            </div>
-        </div>
-        <!-- / -->
-
-        <!-- theme switcher -->
-        <?php require 'parts/switcher.php' ?>
-        <!-- / -->
-
-        <!-- ############ LAYOUT END-->
-
-    </div>
-    <?php require 'parts/footer.php' ?>
+<?php require 'parts/footer.php' ?>

@@ -108,6 +108,8 @@
                                         <form action="<?php echo ROOT . '/admin/associaSchedaEsercizi'; ?>"
                                               method="post">
                                             <?php
+                                            $esercizi = [];
+                                            $esercizi[] = $data['esercizi'];
                                             foreach ($data['categorie'] as $cat) {
                                                 echo <<<HTML
                                                     <div id="accordion">
@@ -123,7 +125,8 @@
                                                           <div class="card-body pt-3">
 HTML;
 
-                                                foreach ($data['esercizi'] as $esercizio) {
+
+                                                foreach ($esercizi[0] as $key => $esercizio) {
                                                     $es = IMG . '/scheda/' . $cat->nome . '/' . $esercizio->nome;
                                                     if ($esercizio->id_categoria == $cat->id) {
 
