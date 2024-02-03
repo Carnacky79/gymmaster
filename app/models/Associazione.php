@@ -13,7 +13,8 @@ class Associazione
     {
         $query = "SELECT DISTINCT
     esercizi.nome,
-    esercizi_scheda.note
+    esercizi_scheda.note,
+    categorieesercizi.nome AS nome_cat
 FROM
     esercizi
          JOIN

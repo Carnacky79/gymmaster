@@ -26,17 +26,33 @@
                                 <h4>Elenco Esercizi:</h4>
                                 <ul>
                                     <?php foreach ($data['esercizi'] as $esercizio): ?>
-                                        <li><?php echo str_replace('_', ' ', $esercizio->nome); ?>
-                                            <ul>
-                                                <li>Ripetizioni: <?= $esercizio->ripetizioni ?></li>
-                                                <li>Serie: <?= $esercizio->serie ?></li>
-                                                <li>Carico: <?= $esercizio->carico ?></li>
-                                                <li>Recupero: <?= $esercizio->recupero ?></li>
-                                            </ul>
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-md-6"><?php
+                                                    $imgSrc = IMG . '/scheda/' . $esercizio->nome_cat . '/' . $esercizio->nome;
+                                                    echo "<img class='img-fluid' style='height: 300px' src='$imgSrc' />";
+
+                                                    ?>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>Note: <?= $esercizio->note ?></p>
+                                                </div>
+                                            </div>
                                         </li>
-                                        <hr>
+                                        <hr style="border: 2px solid orangered">
                                     <?php endforeach; ?>
                                 </ul>
+                                <div class="mt-3 text-center">
+                                    <?php
+                                    $scheda_link = ROOT . '/admin/scaricascheda';
+                                    ?>
+                                    <form action="<?php echo $scheda_link; ?>" method="post">
+                                        <input type="hidden" name="id_scheda"
+                                               value="<?php echo $data['scheda']->id; ?>">
+                                        <button class="btn btn-lg btn-info" type="submit">Scarica Scheda</button>
+                                    </form>
+
+                                </div>
                             </div>
                         </div>
                     </div>

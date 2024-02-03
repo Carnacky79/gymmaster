@@ -1,5 +1,7 @@
 <?php
 
+use Dompdf\Dompdf;
+
 class Admin
 {
     use Controller;
@@ -152,5 +154,51 @@ class Admin
         $iscritto = new Iscritto();
         $iscritto->delete($_POST['id_iscritto']);
         $this->redirect('admin/users');
+    }
+
+    public function scaricascheda()
+    {
+
+        $id = $_POST['id_scheda'];
+
+        $es = new Associazione();
+        $esercizi = $es->esercizi_scheda_utente($id);
+
+        $html = "<h4>Elenco Esercizi:</h4>";
+        $html .= "<ul>";
+        foreach ($esercizi as $esercizio) {
+            $imgSrc = IMG . '/scheda/' . $esercizio->nome_cat . '/' . $esercizio->nome;
+            $html .= <<<HTML
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                <img class='img-fluid' style='height: 250px' src='$imgSrc' />
+                                                </div>  
+                                                <div class="col-md-6">
+                                                    <p>Note: $esercizio->note</p>
+                                                </div>      
+                                                </div>
+                                        </li>  
+                        <hr style="border: 2px solid orangered">
+HTML;
+
+        }
+        $html .= "</ul>";
+        //exit($html);
+
+
+// instantiate and use the dompdf class
+        $dompdf = new Dompdf();
+        $dompdf->set_option('isRemoteEnabled', true);
+        $dompdf->loadHtml($html);
+
+// (Optional) Setup the paper size and orientation
+        $dompdf->setPaper('A4', 'portrait');
+
+// Render the HTML as PDF
+        $dompdf->render();
+
+// Output the generated PDF to Browser
+        $dompdf->stream();
     }
 }

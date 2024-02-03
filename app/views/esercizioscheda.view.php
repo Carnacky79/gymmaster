@@ -50,7 +50,7 @@
                     <h5 class="mb-0 _300">Ciao <?= $_SESSION['user']->nome ?></h5>
                 </div>
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-md-4">
                         <div class="box">
                             <div class="box-header">
                                 <h3>Nuova scheda di <?= $data['iscritto'][0]->nome ?></h3>
@@ -82,7 +82,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-8">
+                    <div class="col-md-8">
                         <div class="box">
                             <div class="box-header">
                                 <h3>Esercizi per <?= $data['iscritto'][0]->nome ?></h3>
@@ -124,34 +124,22 @@
 HTML;
 
                                                 foreach ($data['esercizi'] as $esercizio) {
-                                                    $es = str_replace('_', ' ', $esercizio->nome);
+                                                    $es = IMG . '/scheda/' . $cat->nome . '/' . $esercizio->nome;
                                                     if ($esercizio->id_categoria == $cat->id) {
 
                                                         echo <<<HTML
                                                 
-                                                <div class="row">
-                                                    <div class="col-1">
+                                                <div class="row mt-2" style="border-bottom: 1px solid orangered">
+                                                    <div class="col-sm-1 pt-4">
                                                         <input type="checkbox"
                                                                name="esercizi[]" value="$esercizio->id" aria-label="...">
                                                     </div>
-                                                    <div class="col-3">
-                                                        $es
+                                                    <div class="col-sm-7">
+                                                        <img class="img-fluid" style="height: 200px;" src="$es" />
                                                     </div>
-                                                    <div class="col-2">
-                                                        <input type="text" class="form-control" name="serie_$esercizio->id"
-                                                               placeholder="Serie">
-                                                    </div>
-                                                    <div class="col-2">
-                                                        <input type="text" class="form-control" name="rep_$esercizio->id"
-                                                               aria-describedby="" placeholder="Reps">
-                                                    </div>
-                                                    <div class="col-2">
-                                                        <input type="text" class="form-control" name="recupero_$esercizio->id"
-                                                               aria-describedby="" placeholder="Recupero">
-                                                    </div>
-                                                    <div class="col-2">
-                                                        <input type="text" class="form-control" name="carico_$esercizio->id"
-                                                               aria-describedby="" placeholder="Carico">
+                                                    <div class="col-sm-4">
+                                                        <textarea class="form-text" name="note_$esercizio->id"
+                                                               placeholder="Note"></textarea>
                                                     </div>
                                                 </div>
     HTML;
