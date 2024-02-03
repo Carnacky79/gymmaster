@@ -13,10 +13,7 @@ class Associazione
     {
         $query = "SELECT DISTINCT
     esercizi.nome,
-    esercizi_scheda.rep AS ripetizioni,
-    esercizi_scheda.serie,
-    esercizi_scheda.carico,
-    esercizi_scheda.recupero
+    esercizi_scheda.note
 FROM
     esercizi
          JOIN

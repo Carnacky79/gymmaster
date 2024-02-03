@@ -53,13 +53,14 @@
                     <?php
                     $count = 1;
                     foreach ($data['esercizi'] as $esercizio) {
-                        $imgs = IMG . '/esercizi/' . $esercizio->cat_nome . '/' . $esercizio->nome . '/' . str_replace('_', '-', $esercizio->nome) . '.gif';
+                        //$imgs = IMG . '/esercizi/' . $esercizio->cat_nome . '/' . $esercizio->nome . '/' . str_replace('_', '-', $esercizio->nome) . '.gif';
+                        $imgs = IMG . '/scheda/' . $esercizio->cat_nome . '/' . $esercizio->nome;
                         $html = <<<HTML
                         <div class="col-4">
                         <div class="box">
                             <div class="box-header">
                                 <h3>$esercizio->nome</h3>
-                                <small>$esercizio->cat_nome</small>
+                                <!--<small>$esercizio->cat_nome</small>-->
                             </div>
                             <div class="box-tool">
                                 <!--<ul class="nav">

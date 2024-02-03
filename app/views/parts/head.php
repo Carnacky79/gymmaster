@@ -1,9 +1,9 @@
 <?php
-if ($_SERVER['HTTP_REFERER'] != 'https://www.gymstudio-manager.it/') {
+/*if ($_SERVER['HTTP_REFERER'] != 'https://www.gymstudio-manager.it/') {
     if (!isset($_SERVER['user']) && substr($_SERVER['HTTP_REFERER'], 0, 39) != 'https://www.gymstudio-manager.it/public') {
         header("Location: https://www.gymstudio-manager.it");
     }
-}
+}*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,5 +45,5 @@ if ($_SERVER['HTTP_REFERER'] != 'https://www.gymstudio-manager.it/') {
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 </head>
 <?php
-echo $_SERVER['HTTP_REFERER'] != 'https://www.gymstudio-manager.it/';
+//echo $_SERVER['HTTP_REFERER'] != 'https://www.gymstudio-manager.it/';
 ?>

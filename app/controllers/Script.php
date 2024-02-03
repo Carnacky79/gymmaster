@@ -6,8 +6,21 @@ class Script
 
     function index()
     {
-        $dir = 'C:\Apache24\htdocs\gym\public\imgs\esercizi';
-        $ffs = scandir($dir);
+        $associazione = [
+            'addominali' => 1,
+            'bicipiti' => 2,
+            'cardio' => 3,
+            'dorsali' => 4,
+            'gambe' => 5,
+            'pettorali' => 6,
+            'spalle' => 7,
+            'tricipiti' => 8
+        ];
+        $dir = IMG . '/scheda/';
+        $path = parse_url($dir, PHP_URL_PATH);
+        //exit($_SERVER['DOCUMENT_ROOT'] . $path);
+        $path = $_SERVER['DOCUMENT_ROOT'] . $path;
+        $ffs = scandir($path);
 
         unset($ffs[array_search('.', $ffs, true)]);
         unset($ffs[array_search('..', $ffs, true)]);
@@ -17,36 +30,44 @@ class Script
             return;
         //echo '<ol>';
 
-        $esercizi = [];
-
+        $categorie= [];
+        //echo "<ul>";
         foreach ($ffs as $ff) {
-            if (is_dir($dir . '/' . $ff)) {
-                $subs = scandir($dir . '/' . $ff);
+            //$categorie[] = $ff;
+
+            if (is_dir($path .'/'.  $ff)) {
+                //echo "<li>$ff";
+                $subs = scandir($path .'/'.  $ff);
 
                 unset($subs[array_search('.', $subs, true)]);
                 unset($subs[array_search('..', $subs, true)]);
                 $count = 0;
+                //echo "<ol>";
                 foreach ($subs as $sub) {
-                    if (is_dir($dir . '/' . $ff . '/' . $sub)) {
-                        $esercizi[$ff][$count++] = $sub;
-                    }
+                    $categorie[$ff][$count++] = $sub;
+                    //echo "<li>$sub</li>";
                 }
+                //echo "</ol>";
+                //echo "</li>";
             }
-
+            //echo "</ul>";
         }
-        $count = 1;
 
-        foreach ($esercizi as $key => $value) {
-            $esercizio = new Esercizio();
-            foreach ($value as $es) {
-                $data = [
-                    'nome' => $es,
-                    'id_categoria' => $count,
-                ];
-                $esercizio->insert($data);
-            }
-            $count++;
+        $esercizio = new Esercizio();
+        //print_r($categorie);
+        foreach ($categorie as $c => $v){
+            //echo "$c<br />";
+                foreach ($v as $sub){
+                    //echo " - $sub<br />";
+                    $data = [
+                        'id_categoria' => $associazione[$c],
+                        'nome' => $sub,
+                    ];
+                    $esercizio->insert($data);
+                }
+                //echo "<hr>";
         }
+
     }
 
     function file_get_contents_utf8($fn)
